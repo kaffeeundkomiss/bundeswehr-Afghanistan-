@@ -79,3 +79,85 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 .ereignis h3 time{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--braun)}
 .ereignis p{margin:0;max-width:72ch}
 .ereignis p + p{margin-top:8px}
+
+/* Seitennavigation (alle Seiten) */
+nav.seiten{background:var(--paper);border-bottom:1px solid var(--line)}
+nav.seiten ul{max-width:var(--max);margin:0 auto;padding:0 16px;list-style:none;display:flex;flex-wrap:wrap;gap:0}
+nav.seiten a{display:block;padding:10px 14px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
+nav.seiten a:hover{border-bottom-color:var(--hellbraun)}
+nav.seiten a[aria-current="page"]{border-bottom-color:var(--akzent);color:var(--akzent)}
+@media (max-width:520px){nav.seiten a{padding:9px 10px;font-size:13px;letter-spacing:.03em}}
+
+/* Karten */
+:root{
+  --k-land:#E6DCC8; --k-landlinie:#CDBFA4; --k-afg:#D8C29C; --k-grenze:#FFFDF8; --k-text:#2C281F; --k-halo:#FFFDF8;
+  --rc-c:#9A4A36; --rc-n:#5E6B3A; --rc-w:#B8956A; --rc-s:#D1A84E; --rc-sw:#7E8D96; --rc-e:#7A5A3C;
+  --k-aussen:#E9E0CF; --k-ohne:#C9CDA8; --k-prt:#5E6B3A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --k-land:#26231C; --k-landlinie:#3B362B; --k-afg:#5C513B; --k-grenze:#1D1B16; --k-text:#ECE5D6; --k-halo:#1D1B16;
+    --rc-c:#B8644D; --rc-n:#7F8E52; --rc-w:#A88B63; --rc-s:#B8933F; --rc-sw:#71808A; --rc-e:#8C6B4A;
+    --k-aussen:#2E2B23; --k-ohne:#5B6040; --k-prt:#9FAE6E;
+  }
+}
+:root[data-theme="dark"]{
+  --k-land:#26231C; --k-landlinie:#3B362B; --k-afg:#5C513B; --k-grenze:#1D1B16; --k-text:#ECE5D6; --k-halo:#1D1B16;
+  --rc-c:#B8644D; --rc-n:#7F8E52; --rc-w:#A88B63; --rc-s:#B8933F; --rc-sw:#71808A; --rc-e:#8C6B4A;
+  --k-aussen:#2E2B23; --k-ohne:#5B6040; --k-prt:#9FAE6E;
+}
+.kartenrahmen{margin:0;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--akzent);padding:12px}
+.kartesvg{display:block;width:100%;height:auto;background:var(--k-land)}
+.kartesvg .land{fill:var(--k-land);stroke:var(--k-landlinie);stroke-width:.4}
+.kartesvg .prov{stroke:var(--k-grenze);stroke-width:.35;stroke-linejoin:round}
+.kartesvg .prov.afg{fill:var(--k-afg)}
+.kartesvg .prov.rc-c{fill:var(--rc-c)} .kartesvg .prov.rc-n{fill:var(--rc-n)} .kartesvg .prov.rc-w{fill:var(--rc-w)}
+.kartesvg .prov.rc-s{fill:var(--rc-s)} .kartesvg .prov.rc-sw{fill:var(--rc-sw)} .kartesvg .prov.rc-e{fill:var(--rc-e)}
+.kartesvg .prov.unsicher{fill:url(#schraffur)}
+.kartesvg .prov.aussen{fill:var(--k-aussen)}
+.kartesvg .prov.nord{fill:var(--k-ohne)}
+.kartesvg .prov.nord[class*="prt-"]{fill:var(--k-afg)}
+.kartesvg .prov.nord.prt-deu{fill:var(--rc-n)}
+.kartesvg text{font-family:var(--body);fill:var(--k-text);paint-order:stroke;stroke:var(--k-halo);stroke-width:1.1px;stroke-linejoin:round}
+.kartesvg .landname{font-size:4.2px;font-style:italic;fill:var(--mute);text-anchor:middle;letter-spacing:.08em;text-transform:uppercase}
+.kartesvg .gebirge{font-size:3.6px;fill:var(--mute);text-anchor:middle;stroke-width:.9px;font-weight:600}
+.kartesvg .ort circle{fill:var(--k-text);stroke:var(--k-halo);stroke-width:.6}
+.kartesvg .ort text{font-size:3.9px;font-weight:600}
+.kartesvg .ort.de circle,.kartesvg .ort.prt circle{fill:var(--akzent)}
+.kartesvg .ort.haupt circle{r:2.4px}
+.kartesvg .rcname{font-size:4.6px;font-weight:800;text-anchor:middle;text-transform:uppercase;letter-spacing:.04em;stroke-width:1.4px}
+.kartesvg .provname{font-size:3.3px;text-anchor:middle;fill:var(--k-text);stroke-width:.9px}
+.nord-karte .kartesvg .ort text{font-size:2.5px}
+.nord-karte .kartesvg .provname{font-size:2.2px;fill:var(--mute)}
+.nord-karte .kartesvg .ort circle{r:1.3px}
+.kartesvg .ort:not(.de):not(.prt):not(.haupt):not(.hq) circle{fill:var(--k-halo);stroke:var(--k-text);stroke-width:.7}
+figcaption{margin-top:10px;font-size:14px;color:var(--mute)}
+.legende{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:10px 0 0;padding:0;font-size:14px}
+.legende li{display:flex;align-items:center;gap:6px}
+.legende .feld{width:16px;height:12px;border:1px solid var(--line);flex:none}
+.legende .punkt{width:9px;height:9px;border-radius:50%;background:var(--akzent);flex:none}
+.legende .schraffur{background:repeating-linear-gradient(45deg,var(--rc-s) 0 3px,var(--k-afg) 3px 6px)}
+
+/* Tabellen auf Kartenseiten */
+.tabelle{width:100%;overflow-x:auto}
+.tabelle table{width:100%;border-collapse:collapse;font-size:15px}
+.tabelle th,.tabelle td{text-align:left;vertical-align:top;padding:8px 10px;border-top:1px solid var(--line)}
+.tabelle thead th{border-top:0;border-bottom:2px solid var(--akzent);font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.tabelle td .beleg{display:block}
+.nationen{columns:2 220px;column-gap:24px;margin:0;padding-left:20px}
+.nationen li{margin:3px 0;break-inside:avoid}
+.weiter{font-weight:600}
+.kliste{list-style:none;margin:0;padding:0}
+.kliste li{margin:6px 0;padding-left:46px;text-indent:-46px;overflow-wrap:anywhere}
+.kliste li:target{background:var(--hinweis-bg)}
+.knr{display:inline-block;width:46px;text-indent:0;font-family:var(--mono);font-size:13px;color:var(--mute)}
+
+.kartesvg .ort.prt circle{fill:var(--k-text);stroke:var(--k-halo);stroke-width:.5}
+.kartenbox{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.kartenhinweis{display:none;font-size:13px;color:var(--mute);margin:6px 0 0}
+@media (max-width:600px){
+  .kartenbox .kartesvg{width:640px;max-width:none}
+  .kartenhinweis{display:block}
+}
+main > *{min-width:0}
+h1{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
