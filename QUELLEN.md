@@ -1,6 +1,6 @@
 # Belegmatrix
 
-Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] (ZMSBw), [15] und [17] gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10], [12] und [23] (Bundestag) zum Bundestag; [19] und [20] zum Auswärtigen Amt; [2], [28] und [29] zur Bundeszentrale für politische Bildung. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
+Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] (ZMSBw), [15] und [17] gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10], [12] und [23] (Bundestag) zum Bundestag; [19] und [20] zum Auswärtigen Amt; [2], [28] und [29] zur Bundeszentrale für politische Bildung; [27] ist das Bundespresseamt. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
 
 | Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
 |---|---|---|---|
@@ -53,6 +53,12 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] 
 | Anschlag 31.05.2017 nahe deutscher Botschaft | [19]; [24] | [19] „in unmittelbarer Nähe der deutschen Botschaft verübt“; [24] Lkw mit Sprengsatz, „Auch die deutsche und französische Botschaft wurden beschädigt“ | belegt; Lkw und Gebäudeschaden nur [24] |
 | Tote: mindestens 80 (erste Meldung) bzw. über 150 (AA) | [24]; [20] | [24] „mindestens 80 Tote und etwa 350 Verletzte, wie afghanische Medien berichteten“; [20] „Der Anschlag hat über 150 Menschenleben gefordert“ | unterschiedlicher Stand, beide genannt |
 | Bedienstete verletzt, afghanischer Wachmann tot | [19]; [24] | [19] „auch Bedienstete der deutschen Botschaft verletzt“, Wachmann umgekommen; [24] „Mitarbeiter getroffen“ | belegt; [20] nennt zwei getötete afghanische Mitarbeiter einer Sicherheitsfirma |
+| Evakuierung 16.–26.08.2021, A400M nach Taschkent | [7]; [26]; [25] | [7] „vom 16. bis zum 26. August 2021“, „Transportflugzeugen vom Typ A400M und A310“; [26] „vom 16. bis zum 26. August“, „Alle Flüge gingen von Kabul in das usbekische Taschkent“; [25] „in die usbekische Hauptstadt Taschkent“ | belegt |
+| 5.347 Evakuierte | [7]; [25]; [26]; [27] | [7] „insgesamt 5.347 Personen“; [25] „insgesamt 5.347 Menschen“; [26] „5.347 Personen aus Kabul ausfliegen“; [27] „Insgesamt wurden bisher 5347 Menschen evakuiert“ | belegt |
+| Mehr als 4.000 Afghaninnen und Afghanen | [25]; [27] | [25] „mehr als 4.000 Afghanen und rund 500 Deutsche“; [27] „darunter mehr als 4100 Afghaninnen und Afghanen“ | belegt (untere Zahl übernommen) |
+| Rund 500 Soldaten im Einsatz, Mandat bis 600 | [26]; [7]; [27] | [26] „rund 500 deutschen Soldaten“; [7] „Bis zu 600 Soldatinnen und Soldaten“; [27] „Bis zu 600 Bundeswehrsoldaten“ | 500 nur [26]; Obergrenze belegt |
+| Explosionen am Flughafen 26.08.2021, mind. 13 US-Soldaten tot | [25]; [27] | [25] „zahlreiche Menschen getötet“; [27] „Dutzende Menschen, darunter mindestens 13 US-Soldaten“ | Tote allgemein belegt; 13 US-Soldaten nur [27] |
+| Zahl der A400M (6 oder 7) | [7] | Zahlen-Box „6 A400M“, Bildunterschrift „Sieben“ | widersprüchlich, nicht übernommen |
 
 ## Offene Punkte (nicht auf der Seite)
 
@@ -67,7 +73,7 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] 
 
 ## Einstiegskasten „Worum geht es?“ (ergänzt 07.11.2026)
 
-Hinweis: [25]–[27] werden mit PR #4 (Evakuierung) vergeben, deshalb beginnen die neuen Nummern bei [28]. [10] nur bis S. 25 wörtlich geprüft.
+[10] nur bis S. 25 wörtlich geprüft.
 
 | Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
 |---|---|---|---|
