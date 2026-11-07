@@ -78,3 +78,4 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 .ereignis h3{margin:0 0 6px;font-size:17px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
 .ereignis h3 time{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--braun)}
 .ereignis p{margin:0;max-width:72ch}
+.ereignis p + p{margin-top:8px}
