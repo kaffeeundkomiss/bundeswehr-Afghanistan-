@@ -32,6 +32,7 @@ RC = {
  'SW': ['AF-HEL','AF-NIM'],
  'E': ['AF-BAM','AF-PAR','AF-PAN','AF-KAP','AF-LAG','AF-NUR','AF-KNR','AF-NAN','AF-WAR','AF-LOG','AF-PKA','AF-KHO','AF-PIA','AF-GHA'],
 }
+RCNAME = {'C': 'RC Capital', 'N': 'RC North', 'W': 'RC West', 'S': 'RC South', 'SW': 'RC Southwest', 'E': 'RC East'}
 # Zuordnung nur durch eine Quelle belegt
 UNSICHER = {'AF-DAY'}
 RC_VON = {p: r for r, ps in RC.items() for p in ps}
@@ -80,11 +81,12 @@ def svg(inhalt, titel, desc, vb=None, cls=''):
     return (f'<svg class="kartesvg {cls}" viewBox="{vb}" role="img" aria-labelledby="t-{cls} d-{cls}">'
             f'<title id="t-{cls}">{titel}</title><desc id="d-{cls}">{desc}</desc>\n{inhalt}\n</svg>')
 
-def provinzen(klasse_von, beschriften=None):
+def provinzen(klasse_von, beschriften=None, info=None):
     out = []
     for code, p in D['provinces'].items():
         k = klasse_von(code)
-        out.append(f'<path class="prov {k}" data-prov="{code}" d="{p["d"]}"><title>{NAMEN[code]}</title></path>')
+        i = info(code) if info else NAMEN[code]
+        out.append(f'<path class="prov {k}" data-prov="{code}" data-info="{i}" d="{p["d"]}"><title>{i}</title></path>')
     if beschriften:
         for code in beschriften:
             x, y = D['provinces'][code]['c']
@@ -121,7 +123,8 @@ def karte_rc():
         nachbarn(),
         '<defs><pattern id="schraffur" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
         '<rect width="3" height="3" style="fill:var(--k-afg)"/><rect width="1.5" height="3" style="fill:var(--rc-s)"/></pattern></defs>',
-        provinzen(lambda c: 'rc-' + RC_VON[c].lower() + (' unsicher' if c in UNSICHER else '')), land_namen(),
+        provinzen(lambda c: 'rc-' + RC_VON[c].lower() + (' unsicher' if c in UNSICHER else ''),
+                  info=lambda c: f'{NAMEN[c]}: {RCNAME[RC_VON[c]]}' + (' (nur eine Quelle)' if c in UNSICHER else '')), land_namen(),
         '\n'.join(tx),
         ort('masar', 'ort hq', 0, -3.5, 'middle'), ort('herat', 'ort hq', 0, -3.5, 'middle'),
         ort('kandahar', 'ort hq', 3, 4), ort('lashkargah', 'ort hq', -3, 4.5, 'end'),
@@ -135,6 +138,13 @@ def karte_rc():
 def karte_nord():
     prt = {  # Provinz -> Nation des PRT laut Placemat 12/2010
         'AF-BAL': 'swe', 'AF-BDS': 'deu', 'AF-KDZ': 'deu', 'AF-BGL': 'hun', 'AF-FYB': 'nor', 'AF-JOW': 'tur'}
+    prt_text = {'AF-BAL': 'PRT Masar-i-Scharif, Schweden', 'AF-BDS': 'PRT Faisabad, Deutschland',
+                'AF-KDZ': 'PRT Kundus, Deutschland', 'AF-BGL': 'PRT Pol-e Chomri, Ungarn',
+                'AF-FYB': 'PRT Maimana, Norwegen', 'AF-JOW': 'PRT Scheberghan, Türkei'}
+    def info(c):
+        if RC_VON[c] != 'N':
+            return f'{NAMEN[c]}: {RCNAME[RC_VON[c]]}'
+        return f'{NAMEN[c]}: ' + prt_text.get(c, 'kein eigenes Wiederaufbauteam')
     def kl(c):
         if RC_VON[c] != 'N':
             return 'aussen'
@@ -152,7 +162,7 @@ def karte_nord():
                    'AF-BGL': (0, 5.5), 'AF-FYB': (3, 7), 'AF-JOW': (2, 6.5), 'AF-SAM': (0, 1)})
     inhalt = '\n'.join([
         nachbarn(),
-        provinzen(kl, beschr),
+        provinzen(kl, beschr, info),
         ort('masar', 'ort prt', 0, 4.2, 'middle', 'Masar-i-Scharif · SWE'),
         ort('feyzabad', 'ort prt', 0, -3, 'middle', 'Faisabad · DEU'),
         ort('kundus', 'ort prt', 2.5, -2.2, 'start', 'Kundus · DEU'),
