@@ -72,3 +72,9 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 .quellen li:target{background:var(--hinweis-bg)}
 .hinweis{font-size:14px;color:var(--mute)}
 .fuss{color:var(--mute);font-size:13px;padding-bottom:32px}
+
+.ereignis{padding:14px 0;border-top:1px solid var(--line)}
+.ereignis:first-of-type{border-top:0;padding-top:4px}
+.ereignis h3{margin:0 0 6px;font-size:17px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.ereignis h3 time{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--braun)}
+.ereignis p{margin:0;max-width:72ch}

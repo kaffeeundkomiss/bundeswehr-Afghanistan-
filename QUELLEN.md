@@ -1,6 +1,6 @@
 # Belegmatrix
 
-Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7] und [11] (ZMSBw) gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10] und [12] (Bundestag) zum Bundestag. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
+Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] (ZMSBw), [15] und [17] gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10], [12] und [23] (Bundestag) zum Bundestag; [19] und [20] zum Auswärtigen Amt. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
 
 | Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
 |---|---|---|---|
@@ -21,7 +21,7 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7] und [1
 | Strafrechtlich ohne Folgen für Klein | [2]; [13] | [2] „Strafrechtlich bleibt der Befehl für Oberst Klein ohne Folgen.“; [13] Einstellung durch den Generalbundesanwalt am 13.10.2010 „mangels zur Anklageerhebung hinreichenden Tatverdachts“, BVerfG 19.05.2015 (2 BvR 987/11): „verfassungsrechtlich nicht zu beanstanden“ | belegt |
 | Schadenersatzklagen erfolglos bis BVerfG 2020 | [14] | BVerfG beschloss am 18.11.2020 (2 BvR 477/17), die Verfassungsbeschwerde „gegen die Urteile der vorangegangenen Instanzen bis hin zum Bundesgerichtshof nicht anzunehmen“ | eine Quelle |
 | Rücktritt Generalinspekteur Schneiderhan 26.11.2009 | [10] WD 2 – 3000 – 062/21, 20.01.2022 | „26. November 2009 – Ende der Amtszeit des Generalinspekteurs Wolfgang Schneiderhan … im Zuge der sogenannten Kundus-Affäre“ | eine Quelle; [2] bestätigt allgemein den Rücktritt „eines Ministers und des Generalinspekteurs“; Passage bei der Prüfung am 07.11.2026 nicht wiedergefunden (PDF, 372 Seiten) |
-| Karfreitagsgefecht 2010, drei Tote | [2] | „In dem Schusswechsel fallen drei deutsche Soldaten“ | eine Quelle |
+| Karfreitagsgefecht 2010, drei Tote | [2]; [15]; [16] | [2] „In dem Schusswechsel fallen drei deutsche Soldaten“; [15] „Drei Soldaten sterben, acht werden verwundet.“; [16] „Am Ende waren drei aus ihrer Truppe tot“ | belegt |
 | ISAF-Ende 31.12.2014, danach Resolute Support | [1]; [2] | [1] „Zum 31. Dezember 2014 wurde die NATO-Mission beendet.“; [2] „den ISAF-Einsatz zum Jahresende 2014 auslaufen lassen. Auf ihn folgt die Mission ‚Resolute Support‘.“ | belegt |
 | Letzte 264 Soldaten, Abflug 29.06., Landung 30.06.2021 | [5] Bundeswehr; [6] dpa/SZ | [5] „Der Heimflug begann am 29. Juni 2021 …“, „die letzten 264 Bundeswehrsoldatinnen und Bundeswehrsoldaten“; [6] „am Mittwoch [30.06.2021] … 264 Männer und Frauen“ | belegt ([5] nur als Suchauszug gesehen) |
 | Evakuierung 16.–26.08.2021, 5.347 Personen, ≥ 45 Nationen | [7] Bundeswehr | „insgesamt 5.347 Personen aus mindestens 45 Nationen evakuiert“ | eine Quelle (Bundeswehr); [10] zitiert dieselbe Seite |
@@ -31,6 +31,28 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7] und [1
 | Einstimmig verabschiedet | [8] (Debattenbericht 31.01.2025) | Wiedergabe eines SPD-Redners: „diesen einstimmig zu verabschieden“ | eine Quelle, nur als Rednerangabe; [9] erwähnt es nicht |
 | Mehr als 70 Empfehlungen | [9] | „mehr als 70 Empfehlungen an die Politik“ | eine Quelle; „72“ nur in Suchauszügen (Wikipedia, Grünen-Fraktion), nicht übernommen |
 | Merkel letzte Zeugin im Untersuchungsausschuss, Dezember 2024 | [9] | „Als letzte Zeugin im Untersuchungsausschuss war im Dezember 2024 die frühere Bundeskanzlerin Angela Merkel befragt worden.“ | eine Quelle |
+| Gründe: Anschläge 11.09.2001, „uneingeschränkte Solidarität“ | [2]; [11] | [2] „uneingeschränkten Solidarität“, die Kanzler Schröder den USA nach den Anschlägen … zugesagt hatte; [11] „erklärte Bundeskanzler Schröder öffentlich die ‚uneingeschränkte Solidarität‘“ | belegt (Abruf 07.11.2026) |
+| Drahtzieher saßen in Afghanistan | [1] | „denn dort saßen die Drahtzieher der Anschläge“ | eine Quelle (BMVg) |
+| ISAF: nicht in erster Linie Terrorbekämpfung, Unterstützung Karzai, Stabilisierung | [2]; [12] | [2] „nicht in erster Linie den Terror bekämpfen“, „Hamid Karzai unterstützen und das Land stabilisieren“; [12] „Die afghanische Regierung beim Wiederaufbau des Landes und der Stabilisierung der Sicherheitslage zu unterstützen“ | belegt |
+| Grundlage Petersberg-Konferenz Dez. 2001 | [3]; [12] | [3] „seit der ersten Afghanistan-Konferenz in Bonn 2001“; [12] „bei einer Konferenz auf dem Bonner Petersberg geeinigt hatten“ | belegt |
+| UN-Resolution 1386 | [2] | „Auf Grundlage der UN-Resolution 1386“ | eine Quelle |
+| Wiederaufbau, Ausbildung Sicherheitskräfte | [1]; [3] | [1] „zur Ausbildung und Beratung der afghanischen Sicherheitskräfte“; [3] „bildet Deutschland afghanische Sicherheitskräfte aus“ | belegt |
+| Münch: kein konkretes Ziel, Stärkung der eigenen Position; Fischer „kein direktes Interesse“ | [11] | „kein konkretes Ziel in Afghanistan verfolgten“; „Es ging um die Stärkung der eigenen Position in der Welt.“; „kein direktes Interesse an Afghanistan.“ | Einschätzung, eine Quelle |
+| Busanschlag 07.06.2003: Auto, Selbstmordattentäter | [17]; [18] | [17] „Ein Selbstmordattentäter hatte sein Auto neben den Bus gelenkt“; [18] „a deliberate attack from a passing car“ | belegt; [18] nennt laut Polizei auch ein Taxi, nicht übernommen |
+| Vier Tote, auf dem Weg zum Flughafen | [2]; [17] | [2] „vier deutsche Soldaten bei einem Sprengstoffanschlag auf ihren Bus“, „Auf dem Weg zum Flughafen“; [17] „Vier deutsche Soldaten starben“, „auf dem Weg zum Flughafen“ | belegt; [18] (Tagesmeldung) nennt „at least three“ |
+| Verletzte 29 bzw. 31 | [2]; [17] | [2] „29 Soldaten werden verwundet“; [17] „31 ihrer Kameraden wurden teils schwer verletzt“ | widersprüchlich, beide genannt |
+| Erster Sprengstoffanschlag im Auslandseinsatz | [17] | „Es war der erste Sprengstoffanschlag auf deutsche Soldatinnen und Soldaten im Auslandseinsatz“ | eine Quelle (Bundeswehr) |
+| Karfreitagsgefecht: Isa Khel, Kundus | [15]; [2] | [15] „bei der afghanischen Ortschaft Isa Khel in der Provinz Kundus“; [2] nennt das Gefecht bei Kundus | Ortsname nur [15] geprüft |
+| Verwundete 8 bzw. 5 | [15]; [16] | [15] „acht werden verwundet“; [16] „Fünf weitere wurden verwundet.“ | widersprüchlich, beide genannt |
+| Fast neun Stunden | [16] | „Die Kämpfe dauerten fast neun Stunden“ | eine Quelle; [2] „stundenlanges Gefecht“ |
+| Sechs afghanische Soldaten durch deutschen Beschuss getötet | [15] | „Sechs afghanische Soldaten starben.“ (Beschuss zweier Pickups durch Panzergrenadierzug) | eine Quelle (Bundeswehr) |
+| Tötung bin Ladens durch US-Kommando, Abbottabad, 02.05.2011 | [22]; [23]; [21] | [22] „a targeted operation against that compound in Abbottabad, Pakistan“; [23] „Tötung Osama bin Ladens durch ein US-Sonderkommando in Abbottabad/Pakistan“; [21] „nach der US-Kommandoaktion“ | belegt |
+| Bundesregierung nicht eingebunden | [23] | Bundesregierung war nicht in Planung oder Durchführung eingebunden (Antwort der Bundesregierung) | eine Quelle, sinngemäß |
+| Bundesregierung begrüßte Tötung, Aufruf zur Wachsamkeit | [21]; [23] | [21] „Die Bundesregierung begrüßte die Tötung des Islamistenführers, rief die Bürger aber zur Wachsamkeit … auf.“; [23] Merkel-Zitat | belegt |
+| Merkel: „Ich freue mich darüber …“ | [23] | „Ich freue mich darüber, dass es gelungen ist, bin Laden zu töten.“ | eine Quelle (wörtlich in der Drucksache zitiert) |
+| Anschlag 31.05.2017 nahe deutscher Botschaft | [19]; [24] | [19] „in unmittelbarer Nähe der deutschen Botschaft verübt“; [24] Lkw mit Sprengsatz, „Auch die deutsche und französische Botschaft wurden beschädigt“ | belegt; Lkw und Gebäudeschaden nur [24] |
+| Tote: mindestens 80 (erste Meldung) bzw. über 150 (AA) | [24]; [20] | [24] „mindestens 80 Tote und etwa 350 Verletzte, wie afghanische Medien berichteten“; [20] „Der Anschlag hat über 150 Menschenleben gefordert“ | unterschiedlicher Stand, beide genannt |
+| Bedienstete verletzt, afghanischer Wachmann tot | [19]; [24] | [19] „auch Bedienstete der deutschen Botschaft verletzt“, Wachmann umgekommen; [24] „Mitarbeiter getroffen“ | belegt; [20] nennt zwei getötete afghanische Mitarbeiter einer Sicherheitsfirma |
 
 ## Offene Punkte (nicht auf der Seite)
 
