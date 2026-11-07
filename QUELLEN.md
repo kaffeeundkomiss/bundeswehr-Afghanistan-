@@ -1,6 +1,6 @@
 # Belegmatrix
 
-Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] (ZMSBw), [15] und [17] gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10], [12] und [23] (Bundestag) zum Bundestag; [19] und [20] zum Auswärtigen Amt; [27] ist das Bundespresseamt. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
+Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] (ZMSBw), [15] und [17] gehören zum Geschäftsbereich des Verteidigungsministeriums; [8], [10], [12] und [23] (Bundestag) zum Bundestag; [19] und [20] zum Auswärtigen Amt; [2], [28] und [29] zur Bundeszentrale für politische Bildung; [27] ist das Bundespresseamt. Innerhalb dieser Gruppen gelten sie nicht als voneinander unabhängig. [10] übernimmt beim Luftangriff bei Kundus die tagesschau-Chronik [4] wörtlich (Fußnote 381) und ist dort keine eigene Quelle. [13] und [14] (augengeradeaus.net, Thomas Wiegold) sind unabhängiger Fachjournalismus. Faktenprüfung aller Einträge am 07.11.2026.
 
 | Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
 |---|---|---|---|
@@ -70,6 +70,20 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] 
 - **Zurückgetretener Minister:** vermutlich Franz Josef Jung (damals Arbeitsminister); keine Quelle eingesehen.
 - **Abschlussbericht Untersuchungsausschuss Afghanistan:** Inhalt und Datum noch nicht geprüft.
 - **Getötete afghanische Ortskräfte, Zivilisten, Polizisten:** nicht recherchiert.
+
+## Einstiegskasten „Worum geht es?“ (ergänzt 07.11.2026)
+
+[10] nur bis S. 25 wörtlich geprüft.
+
+| Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
+|---|---|---|---|
+| Taliban regierten Afghanistan 2001, islamistisch | [10] WD, S. 9 f.; [28] bpb, 05.10.2016 | [10] S. 10 „die in Kabul regierenden Taliban“, S. 9 „streng islamistischen Taliban“; [28] „die islamistische Taliban-Regierung Afghanistans“ | belegt |
+| Al-Kaida saß in Afghanistan | [10] S. 9; [1] BMVg | [10] „in einem von den streng islamistischen Taliban geduldeten Refugium“; [1] „denn dort saßen die Drahtzieher der Anschläge“ | belegt |
+| Al-Kaida verübte die Anschläge vom 11.09.2001 | [10] S. 9; [28] | [10] „Al-Qaida und ihr Anführer … Osama bin Laden, werden als Drahtzieher identifiziert“; [28] „die für die Anschläge verantwortliche Terrorgruppe al-Qaida“ | belegt |
+| US-geführte Offensive ab 07.10.2001 | [28]; [29] bpb, 16.10.2024 | [28] „am 7. Oktober 2001 mit einer von den USA angeführten Offensive gegen die Taliban“; [29] „die US-amerikanisch geführte Invasion in Afghanistan“ | belegt; Datum nur [28] |
+| Sturz der Taliban noch 2001 | [10] S. 10; [29] | [10] „Im Winter 2001 werden die in Kabul regierenden Taliban … entmachtet“; [29] „im Oktober 2001 mit dem Sturz des Taliban-Regimes“ | belegt; Monat weicht ab ([28]: Eroberung Kabuls 13.11.2001), daher nur „noch im selben Jahr“ |
+| Bundeswehr vor allem im Norden | [1]; [3] | [1] „Gesamtverantwortung für den Norden Afghanistans“; [3] „das ISAF-Kommando im Norden des Landes“ | belegt |
+| Taliban übernehmen im August 2021 erneut die Macht | [29]; [30] epd, 16.08.2021 | [29] „Mit der Einnahme Kabuls und der Übernahme der Regierung“, „endete dieser Einsatz im August 2021“; [30] „haben die Taliban erneut die Macht in Afghanistan übernommen“ | belegt |
 
 # Belegmatrix Kartenseiten (karte.html, regionalkommandos.html, rc-nord.html)
 
