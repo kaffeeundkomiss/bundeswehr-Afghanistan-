@@ -10,6 +10,23 @@
     aufarbeitung: 'Aufarbeitung'
   };
 
+  // Eigene, einfache Symbole (24er-Raster, Füllung in Textfarbe)
+  var SYMBOLE = {
+    soldat: '<path d="M7.6 6.4C7.6 3.6 9.6 1.6 12 1.6s4.4 2 4.4 4.8l1.6.5v1.5H6V6.9z"/><circle cx="12" cy="10.2" r="2.1"/><path d="M8.2 12.8h7.6l1.5 5.8h-2.4V23h-2.5l-.4-4-.4 4H9.5v-4.4H6.7z"/><path d="M4.6 18.4l13.6-7.6 1 1.8-13.6 7.6z"/>',
+    flugzeug: '<path d="M12 1.8c.8 0 1.3.9 1.3 1.9v5.4l8 4.6v2.2l-8-2.4v5l2.3 1.7v1.7L12 21l-3.6 1v-1.7l2.3-1.7v-5l-8 2.4v-2.2l8-4.6V3.7c0-1 .5-1.9 1.3-1.9z"/>',
+    explosion: '<path d="M12 1.5l1.9 5.2 4.6-3-1.4 5.3 5.4.4-4.3 3.3 4.1 3.5-5.5.2 1.1 5.4-4.7-3.1L12 23l-1.4-5.3-4.7 3.1 1.1-5.4-5.5-.2 4.1-3.5L1.3 8.4l5.4-.4-1.4-5.3 4.6 3z"/><path d="M12 8.2l1 2.7 2.8.2-2.2 1.8 1 2.8-2.6-1.6-2.6 1.6 1-2.8-2.2-1.8 2.8-.2z" fill-opacity=".45" style="fill:var(--paper)"/>',
+    bundestag: '<path d="M6.6 9.6a5.4 4.6 0 0 1 10.8 0z"/><path d="M3.2 10.4h17.6v1.8H3.2zM4.6 13h2v6.2h-2zM8.6 13h2v6.2h-2zM13.4 13h2v6.2h-2zM17.4 13h2v6.2h-2zM2.8 20h18.4v2H2.8zM11.2 3h1.6v3.6h-1.6z"/>',
+    dokument: '<path fill-rule="evenodd" d="M5 2h10l4.5 4.5V22H5zm9 1.6V7.5h4zM7.5 11h9v1.5h-9zm0 3h9v1.5h-9zm0 3h6v1.5h-6z"/>'
+  };
+  var SYMBOL_JE_ART = { bundestag: 'bundestag', einsatz: 'soldat', gewalt: 'explosion', aufarbeitung: 'dokument' };
+  function symbol(name) {
+    var span = document.createElement('span');
+    span.className = 'zl-symbol';
+    span.setAttribute('aria-hidden', 'true');
+    span.innerHTML = '<svg viewBox="0 0 24 24" focusable="false">' + (SYMBOLE[name] || SYMBOLE.soldat) + '</svg>';
+    return span;
+  }
+
   function el(tag, attrs, text) {
     var e = document.createElement(tag);
     if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]);
@@ -33,7 +50,7 @@
     var spanne = bis - von;
 
     var box = el('div', { class: 'zl-steuerung' });
-    var HINWEIS = 'Punkt auf der Zeitachse antippen, um zum Eintrag zu springen.';
+    var HINWEIS = 'Symbol auf der Zeitachse antippen, um zum Eintrag zu springen.';
     var hinweis = el('p', { class: 'zl-hinweis', 'aria-live': 'polite' }, HINWEIS);
 
     // Filter, nur wenn mehrere Arten vorkommen
@@ -50,7 +67,9 @@
       Object.keys(ARTEN).forEach(function (a) {
         if (arten.indexOf(a) < 0) return;
         var b = el('button', { type: 'button', 'aria-pressed': 'false', 'data-art': a });
-        b.appendChild(el('span', { class: 'zl-farbe art-' + a, 'aria-hidden': 'true' }));
+        var marke = el('span', { class: 'zl-farbe art-' + a, 'aria-hidden': 'true' });
+        marke.appendChild(symbol(SYMBOL_JE_ART[a]));
+        b.appendChild(marke);
         b.appendChild(document.createTextNode(ARTEN[a]));
         filterLeiste.appendChild(b);
       });
@@ -58,7 +77,9 @@
     }
 
     // Achse
+    var achsenbox = el('div', { class: 'zl-achsenbox' });
     var achse = el('div', { class: 'zl-achse' });
+    achsenbox.appendChild(achse);
     var linie = el('div', { class: 'zl-linie', 'aria-hidden': 'true' });
     achse.appendChild(linie);
     var schritt = spanne > 12 ? 5 : 2;
@@ -79,6 +100,7 @@
         'aria-label': (zeit ? zeit.textContent + ': ' : '') + (ARTEN[art] || 'Eintrag'),
         'data-ziel': li.id
       });
+      b.appendChild(symbol(li.getAttribute('data-symbol') || SYMBOL_JE_ART[art]));
       b.style.left = ((werte[i] - von) / spanne * 100) + '%';
       b.addEventListener('click', function () { waehle(li, true); });
       b.addEventListener('mouseenter', function () { vorschau(li); });
@@ -88,7 +110,7 @@
       achse.appendChild(b);
       knoepfe.push(b);
     });
-    box.appendChild(achse);
+    box.appendChild(achsenbox);
     box.appendChild(hinweis);
 
     // Vor/Zurück
@@ -102,13 +124,14 @@
     ol.classList.add('zl-aktiv');
 
     // Punkte, die sich überdecken würden, auf Spuren verteilen
-    var SPUREN = [43, 23, 3];
+    var SPUREN = [78, 40, 2];
     function verteilen() {
       var breite = achse.clientWidth, letzte = [-99, -99, -99];
+      var abstand = knoepfe[0] ? knoepfe[0].offsetWidth + 3 : 38;
       knoepfe.forEach(function (k, i) {
         if (k.hidden) return;
         var x = (werte[i] - von) / spanne * breite, s = 0;
-        while (s < SPUREN.length - 1 && x - letzte[s] < 19) s++;
+        while (s < SPUREN.length - 1 && x - letzte[s] < abstand) s++;
         letzte[s] = x;
         k.style.top = SPUREN[s] + 'px';
       });
