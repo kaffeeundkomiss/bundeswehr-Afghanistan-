@@ -29,6 +29,8 @@ h2{margin:0 0 12px;font-size:21px;letter-spacing:-.01em}
 
 header.top{background:var(--head-bg);color:var(--head-ink)}
 header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;padding-bottom:18px}
+.marke{display:flex;align-items:center;gap:12px}
+.marke .logo{flex:none;width:44px;height:44px;fill:#A9C18F;stroke:#A9C18F;stroke-width:1.5;stroke-linejoin:round}
 .marke .name{font-weight:700;font-size:20px}
 .marke .unter{font-size:13px;color:var(--head-mute)}
 .badges span{font-family:var(--mono);font-size:13px;padding:6px 10px;border:1px solid #3A3F4B;border-radius:6px}
