@@ -70,3 +70,66 @@ Abgerufen am 07.11.2026. Nummern wie auf der Seite. Quellen [1], [5], [7], [11] 
 - **Zurückgetretener Minister:** vermutlich Franz Josef Jung (damals Arbeitsminister); keine Quelle eingesehen.
 - **Abschlussbericht Untersuchungsausschuss Afghanistan:** Inhalt und Datum noch nicht geprüft.
 - **Getötete afghanische Ortskräfte, Zivilisten, Polizisten:** nicht recherchiert.
+
+# Belegmatrix Kartenseiten (karte.html, regionalkommandos.html, rc-nord.html)
+
+Abgerufen am 07.11.2026. Nummern [K1]–[K16] wie auf den Kartenseiten. Gruppen ohne gegenseitige Unabhängigkeit: [K4]–[K6] Bundeswehr und [K7] Bundesregierung; [K8]–[K11] NATO/ISAF. [K12] GlobalSecurity, [K13] StrategyPage, [K14] Wikipedia (laut eigener Angabe „rough and unofficial“, nur Zweitbeleg), [K2]/[K15] bpb, [K3] Store norske leksikon, [K16] LeMO gelten als unabhängig. Englische Passagen wörtlich im Original.
+
+## Kartengrundlage
+
+| Gegenstand | Quelle | Lizenz/Hinweis |
+|---|---|---|
+| Länder-, Provinzgrenzen, Orte | [K1] Natural Earth 1:10 Mio. (GitHub nvkelso/natural-earth-vector, master, abgerufen 07.11.2026) | LICENSE.md: „All versions of Natural Earth raster + vector map data found on this website are in the public domain.“ Namensnennung nicht nötig, trotzdem angegeben. |
+| Panjshir und Daikundi | [K1] | In Natural Earth unter falschem `name` (Parwan bzw. Uruzgan) geführt; anhand `gn_name`/`woe_name` korrigiert (`werkzeuge/kartendaten.json`). |
+| Bagram | keine | Nicht in Natural Earth; Lage ungefähr gesetzt (34,95° N, 69,27° O), auf der Karte so vermerkt. |
+| Schriftzug Hindukusch, Landesnamen | keine | Von Hand gesetzt, Lage ungefähr. |
+
+## Seite 1: Übersicht
+
+| Behauptung | Quellen | Passage | Bewertung |
+|---|---|---|---|
+| Sechs Nachbarstaaten | [K3]; [K1] | [K3] „omkranset av Iran, Pakistan, Tadsjikistan, Kina, Usbekistan og Turkmenistan“; [K1] Grenzgeometrie | belegt |
+| 34 Provinzen, Hauptstadt Kabul | [K2]; [K3] | [K2] „34 Provinzen“, „Kabul (4,95 Millionen EW)“; [K3] „inndelt i 34 provinser“, „Hovedstad: Kabul“ | belegt |
+| Fläche rund 652.000 km² | [K2]; [K3] | [K2] „652 230 km²“; [K3] Faktenkasten „Landareal 652 230 km²“ | belegt; [K3] nennt im Fließtext abweichend 647 500 km² |
+| Hindukusch prägt das Land | [K3] | „Landet domineres av den store fjellkjeden Hindu Kush“ | eine Quelle |
+| Einwohner 40,1 bzw. 42,6 Mio. | [K2]; [K3] | [K2] „40,12 Millionen (Stand 2025)“; [K3] „42,6 millioner (2024)“ | beide genannt; [K3] Fließtext nennt 37,5 Mio. für 2021 |
+| Kabul ab Januar 2002 | [K4]; [K15] | [K4] „Im Januar 2002 trafen die ersten Kräfte in Kabul ein.“; [K15] siehe Startseite [2] | belegt |
+| PRT Kundus Herbst 2003, von den USA übernommen | [K4]; [K15]; [K5] | [K4] „das von den Amerikanern errichtete Regionale Wiederaufbauteam“; [K15] „im Herbst 2003 von den US-Amerikanern übernommen“; [K5] 25.10.2003 „treffen in Kundus 27 Bundeswehrsoldaten ein“ | belegt |
+| Kundus 31.12.2003 Pilotprojekt unter ISAF | [K10] | „the military component of the Kunduz PRT was placed under ISAF command as a pilot project“ | eine Quelle (NATO) |
+| Ende dauerhafte Präsenz Kundus 06.10.2013 | [K6] | „beendet ihre dauerhafte Präsenz in der gleichnamigen Provinz“ | eine Quelle |
+| PRT Faisabad ab September 2004 | [K4]; [K5]; [K7] | [K4] „ab Sommer 2004 ein weiteres PRT … in Fayzabad“; [K5] 01.09.2004 „Eröffnung des PRT … Faisabad“; [K7] „2004 folgten das PRT in Faisabad“ | nur Bundeswehr/Bundesregierung; [K16] nennt Feyzabad „ab 2003“ (Abweichung) |
+| Übergabe Faisabad 09.10.2012 | [K6] | „Für das seit September 2004 von der Bundeswehr betriebene Feldlager in Faisabad übernehmen afghanische Sicherheitskräfte nun die Verantwortung.“ | eine Quelle |
+| Masar-i-Scharif, Camp Marmal, Hauptquartier RC North | [K4]; [K16]; [K8] | [K4] „Dafür entstand das Camp Marmal, das Hauptquartier des RC North, in Masar-i Scharif.“; [K16] „2006 übernimmt sie das ISAF-Kommando im Norden … Masar-i-Scharif“; [K8] „MAZAR-E SHARIF (DEU)“ | belegt; Ende 2021 abgeleitet, nicht belegt (auf der Seite vermerkt) |
+| Termes geschlossen Dezember 2015, über 13 Jahre | [K6] | „Lufttransportstützpunkt Termes schließt“, „Nach über 13 Jahren der Nutzung“ | eine Quelle |
+
+## Seite 2: Regionalkommandos (Stand Dezember 2010)
+
+| Behauptung | Quellen | Passage | Bewertung |
+|---|---|---|---|
+| Sechs RC mit Hauptquartieren Kabul, Masar-i-Scharif, Herat, Kandahar, Laschkar Gah, Bagram | [K8]; [K12] | [K8] „KABUL (TUR)“, „MAZAR-E SHARIF (DEU)“, „HERAT (ITA)“, „KANDAHAR (GBR)“, „LASHKAR GAH (GBR)“, „BAGRAM“; [K12] HQ je RC mit Provinz | belegt; Stadt Laschkar Gah nur NATO ([K8], [K9]); [K14] nennt 2012 Camp Leatherneck |
+| Führung Türkei, Deutschland, Italien, USA (East) | [K8]; [K12] | [K8] Nation in Klammern bzw. Kommandeur „(USA)“; [K12] „HQ RC(C) Turkey“, „HQ RC(N) Germany“, „HQ RC(W) Italy“, „HQ RC(E) USA“ | belegt |
+| RC South/Southwest: Führung uneinheitlich | [K8]; [K12] | [K8] HQ „(GBR)“, Kommandeure „(USA)“; [K12] RC(S) „UK (Rotates Canada, UK, US)“, „The lead nation for RC-E, RC-S, and RC-SW was the United States.“ | widersprüchlich, auf der Seite erläutert |
+| Stärken 9.000/11.000/6.500/35.000/32.000/36.500 | [K8] | „strength“ je RC; „indicatives as they change daily“ | eine Quelle (NATO), als Richtwert gekennzeichnet; [K12] März 2011 teils abweichend |
+| RC North: neun Provinzen (Namen) | [K11]; [K7]; [K14] | [K11] „RC-North includes the provinces of: Badakhshan, Baghlan, Balkh, Faryab, Jowzjan, Kunduz, Samangan, Sar-e Pul and Takhar.“; [K7] Karte S. 12 mit denselben neun Namen; [K14] gleiche Liste | belegt |
+| RC West: Badghis, Farah, Ghor, Herat | [K12]; [K14] | [K12] „Herat Province“, „Farah Province“, „Qala-e-Naw, Badghis Province“, „Chaghcharan, Ghowr Province“; [K14] gleiche vier | belegt |
+| RC South: Kandahar, Uruzgan, Zabul | [K12]; [K14] | [K12] „Kandahar Province“, „Uruzgan Province“, „Zabul Province“ | belegt |
+| Daikundi bei RC South | [K13] | „now only has to deal with four (Kandahar, Zabul, Uruzgan, and Daykundi)“ | eine Quelle, Stand Juni 2010; auf der Karte schraffiert |
+| RC Southwest: Helmand, Nimrus | [K13]; [K14]; [K12] (nur Helmand) | [K13] „will handle Helmand and Nimroz“ | belegt |
+| RC East: 14 Provinzen | [K12]; [K8]; [K14] | [K12] Bamyan, Parwan, Panjshir, Kapisa, Ghazni, Nangarhar, Khowst, Nuristan, Kunar, Laghman, Paktika, Wardak, Logar; [K8] PRT Gardez (Paktia), Bamyan u. a. unter RC East; [K14] gleiche Provinzen ohne Bamyan, mit Paktia | belegt |
+| Kabul = RC Capital, Distrikt Surobi 2012 bei RC East | [K12]; [K14] | [K14] „Surobi District (Kabul Province)“ unter RC East | Surobi eine Quelle |
+| UNSCR 1510 Okt. 2003; Stufen 1.10.2004, 10.02.2005 (Ankündigung), 31.07.2006, 05.10.2006 | [K10] | „In October 2003, the United Nations extended ISAF’s mandate to cover the whole of Afghanistan (UNSCR 1510)“; „completed on 1 October 2004“; „On 10 February 2005, NATO announced“; „implemented on 31 July 2006“; „On 5 October 2006, ISAF implemented the final stage“ | eine Quelle (ISAF), gekennzeichnet |
+| Deutschland führt RC North ab 01.06.2006 | [K4]; [K7]; [K16] | [K4] „Am 1. Juni 2006 übernahm Deutschland als sogenannte Lead Nation die Führung“; [K7] „2006 … unter deutscher Führung“; [K16] „2006“ | belegt (Tag nur [K4]) |
+| RC Southwest 2010 | [K13]; [K8] | [K13] Ankündigung 18.06.2010; [K8] führt „Regional Command South West“ im Dezember 2010 | belegt; genaues Datum offen |
+
+## Seite 3: RC North
+
+| Behauptung | Quellen | Passage | Bewertung |
+|---|---|---|---|
+| Mehr als 162.000 km² | [K4] | „mit seinen neun Provinzen und einer Fläche von mehr als 162.000 Quadratkilometern“ | eine Quelle; „rund ein Viertel“ eigene Rechnung mit [K2] |
+| Sechs PRT im Dezember 2010 mit Nation | [K8] | „MAZAR-E SHARIF (SWE)“, „FEYZABAD (DEU)“, „KUNDUZ (DEU)“, „POL-E KHOMRI (HUN)“, „MEYMANEH (NOR)“, „JOWZJAN (TUR)“ | NATO; je PRT zweiter Beleg: [K14] (Kundus, Faisabad, Masar „Finland and Sweden“, Maimana, Pol-e Chomri), [K11] (Kundus, Pol-e Chomri, Jowzjan, Stand 2012), [K12] Jowzjan „PRT Turkey“, [K7] Orte ohne Nation |
+| PRT Jowzjan in Scheberghan | [K7] | Karte: „PRT SHIBIRGHAN *“, „* = zivil geführt“ | eine Quelle für den Ort |
+| PAT Taloqan ab 2007 | [K7] | „Außenstelle in Taloqan in der Provinz Takhar (Provincial Advisory Team, PAT)“ | eine Quelle |
+| 17 Nationen 2012 | [K11] | „NATO Nations: Albania, Belgium, Croatia, Germany, Hungary, Latvia, Netherlands, Norway, U.S., Turkey“; „Non-NATO Nations: Armenia, Bosnia and Herzegovina, Finland, Former Yugoslav Republic of Macedonia, Mongolia, Montenegro, Sweden“ | Grundliste ISAF; Zweitbelege je Nation in der Tabelle; Niederlande und Bosnien und Herzegowina nur [K11] |
+| US-Kräfte im Norden | [K7]; [K14] | [K7] Karte „US-KRÄFTE im RC NORD“; [K14] 3-7 Cavalry, FOB Kunduz | belegt |
+
+Offen: ZMSBw-Publikation „ISAF Regionalkommando Nord“ (opus4.kobv.de) war wegen Bot-Sperre nicht lesbar und ist nicht verwendet. Nationenliste für andere Jahre als 2012 fehlt. Fortschrittsbericht [K7]: Angabe „rund 5.000“ US-Soldaten 2010 nur aus Zusammenfassung gesehen, nicht übernommen.
