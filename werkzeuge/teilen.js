@@ -19,14 +19,14 @@ const ZIEL = path.join(WURZEL, 'teilen');
 const BILDER = path.join(ZIEL, 'bilder');
 const SEITE = 'file://' + path.join(WURZEL, 'index.html');
 const FORMATE = [
-  { endung: '', breite: 1200, hoehe: 630, zoom: { grafik: 1.6, zahl: 1.5, ueberschrift: 1, start: 1 } },
+  { endung: '', breite: 1200, hoehe: 630, mitte: 580, zoom: { grafik: 1.3, zahl: 1.3, ueberschrift: 1, start: 1 } },
   { endung: '-hoch', breite: 1080, hoehe: 1350, zoom: { grafik: 2.7, zahl: 2.4, ueberschrift: 1.25, start: 1.25 } }
 ];
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // Läuft im Browser: ersetzt die Seite durch das Teilbild eines Elements.
-function rendern({ id, art, zoom, adresse }) {
+function rendern({ id, art, zoom, adresse, mitte }) {
   const kurz = {};
   document.querySelectorAll('.quellen li[id^="q"]').forEach((li) => {
     kurz[li.id] = li.textContent.split(':')[0].trim();
@@ -78,6 +78,16 @@ function rendern({ id, art, zoom, adresse }) {
   fuss.children[1].textContent = stand;
 
   box.appendChild(kopf);
+  // Querformat: Kern mittig in einem Streifen von `mitte` Pixeln, weil manche Plattformen
+  // (z. B. Medium) das Vorschaubild quadratisch aus der Mitte zuschneiden.
+  if (mitte) {
+    box.classList.add('tb-quer');
+    const spalte = document.createElement('div');
+    spalte.className = 'tb-mitte';
+    spalte.style.width = (mitte / zoom) + 'px';
+    while (inhalt.firstChild) spalte.appendChild(inhalt.firstChild);
+    inhalt.appendChild(spalte);
+  }
   box.appendChild(inhalt);
   box.appendChild(fuss);
   const stil = document.createElement('style');
@@ -99,6 +109,13 @@ function rendern({ id, art, zoom, adresse }) {
     .tb-unter{margin-top:18px;font-size:24px;color:var(--mute)}
     .tb-start .tb-inhalt{padding:40px}
     .tb-start .tb-gross{font-size:72px}
+    .tb-mitte{margin:0 auto}
+    .tb-quer .tb-kopf,.tb-quer .tb-fuss{justify-content:center}
+    .tb-quer .tb-fuss{gap:28px}
+    .tb-quer.tb-ueberschrift .tb-mitte,.tb-quer.tb-start .tb-mitte,.tb-quer.tb-zahl .tb-mitte{text-align:center}
+    .tb-quer .tb-gross{border-left:0;padding-left:0;font-size:42px}
+    .tb-quer.tb-start .tb-gross{font-size:52px}
+    .tb-quer .tb-unter{font-size:22px}
   `;
   document.body.innerHTML = '';
   document.documentElement.setAttribute('data-theme', 'light');
@@ -160,7 +177,7 @@ function teilseite(e) {
     for (const f of FORMATE) {
       await p.setViewportSize({ width: f.breite, height: f.hoehe });
       await p.goto(SEITE);
-      await p.evaluate(rendern, { id: e.id, art: e.art, zoom: f.zoom[e.art], adresse: BASIS.replace(/^https:\/\//, '').replace(/\/$/, '') });
+      await p.evaluate(rendern, { id: e.id, art: e.art, zoom: f.zoom[e.art], mitte: f.mitte || 0, adresse: BASIS.replace(/^https:\/\//, '').replace(/\/$/, '') });
       await p.screenshot({ path: path.join(BILDER, e.id + f.endung + '.jpg'), type: 'jpeg', quality: 85 });
     }
     if (e.seite !== false) fs.writeFileSync(path.join(ZIEL, e.id + '.html'), teilseite(e));
