@@ -1,5 +1,5 @@
-/* Kaffee und Komiss: gemeinsames Grundsystem aller Bereiche (Variante B, 08.11.2026).
-   Original im Repo kaffeeundkomiss/kaffeeundkomiss.github.io, Kopien in den Bereichs-Repos bitte gleich halten.
+/* Kaffee und Kommiss: gemeinsames Grundsystem aller Bereiche (Variante B, 08.11.2026).
+   Original im Repo kaffeeundkommiss/kaffeeundkommiss.github.io, Kopien in den Bereichs-Repos bitte gleich halten.
    Jeder Bereich setzt nur --kk-akzent, --kk-akzent-hell, --kk-kopf, --kk-muster und --kk-markierung. */
 :root{
   --kk-grund:#F3F0E8; --kk-papier:#FFFDF8; --kk-tinte:#23211C; --kk-grau:#625B4E; --kk-linie:#DAD2C2;
