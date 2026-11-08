@@ -259,3 +259,9 @@ a[aria-expanded="true"]{background:var(--hinweis-bg)}
 .teilen-meldung{font-size:13px;color:var(--mute);align-self:center}
 :target{scroll-margin-top:12px}
 .zahl:target,.grafik:target,.ereignis:target{outline:2px solid var(--akzent);outline-offset:4px}
+.evbild{float:right;width:min(42%,300px);margin:2px 0 8px 18px}
+.evbild img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.evbild figcaption{font-size:12px;line-height:1.35;color:var(--mute);margin-top:4px}
+.ereignis::after{content:"";display:block;clear:both}
+@media (max-width:620px){.evbild{float:none;width:100%;margin:6px 0 10px}}
+.bildnachweis{list-style:none;padding-left:0 !important}
