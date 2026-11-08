@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 
-const BASIS = 'https://kirchnerjan-cell.github.io/bundeswehr-Afghanistan-/';
+const BASIS = 'https://kaffeeundkomiss.github.io/';
 const WURZEL = path.resolve(__dirname, '..');
 const ZIEL = path.join(WURZEL, 'teilen');
 const BILDER = path.join(ZIEL, 'bilder');
