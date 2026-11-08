@@ -1,11 +1,12 @@
-/* Gestaltung: hell, Farben nach dem Tropentarndruck der Bundeswehr (Sand, Hellbraun, Dunkelbraun, Olivgrün). Eine Datei, kein Framework. */
+/* Gestaltung: Grundsystem Kaffee und Komiss (basis.css: Schriften, Leiste, Fuß), Bereichsnote Sicherheitspolitik: Tropentarndruck und Oliv. */
 :root{
-  --bg:#F4EEE2; --paper:#FFFDF8; --ink:#2C281F; --mute:#685C4A; --line:#DCCFB6;
+  --bg:#F3F0E8; --paper:#FFFDF8; --ink:#23211C; --mute:#625B4E; --line:#DAD2C2;
   --akzent:#4C5233; --akzent-ink:#F4EEE2; --link:#6E5034; --braun:#6E5034; --hellbraun:#B39672;
   --hinweis:#6E5034; --hinweis-bg:#EEE0C4;
   --head-bg:#CBB18C; --head-ink:#2C281F; --head-mute:#5C4F3C; --schild:rgba(250,245,235,.95); --tarn-dimm:transparent;
-  --body:system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --titel:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
   --max:960px; --r:0;
 }
 @media (prefers-color-scheme: dark){
@@ -27,14 +28,14 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
 a{color:var(--link)}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
-h1{margin:0;font-size:28px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-left:6px solid var(--akzent);padding-left:12px}
-h2{display:inline-block;margin:0 0 14px;background:var(--akzent);color:var(--akzent-ink);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 12px}
+h1{margin:0;font:700 clamp(30px,5vw,40px)/1.02 var(--titel);text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+h2{display:inline-block;margin:0 0 14px;background:var(--akzent);color:var(--akzent-ink);font:700 15px/1.2 var(--titel);text-transform:uppercase;letter-spacing:.1em;padding:5px 12px 4px}
 
 header.top{background:linear-gradient(var(--tarn-dimm),var(--tarn-dimm)),var(--head-bg) url("tarn.svg") repeat;color:var(--head-ink);border-bottom:4px solid var(--akzent)}
 header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:26px;padding-bottom:26px}
-.marke{display:flex;align-items:center;gap:12px;background:var(--schild);padding:10px 16px 10px 12px;border:1px solid var(--braun)}
+.marke{display:flex;align-items:center;gap:12px;background:var(--schild);padding:10px 16px 10px 12px;border:1px solid var(--line)}
 .marke .logo{flex:none;width:44px;height:44px;fill:var(--akzent);stroke:var(--akzent);stroke-width:1.5;stroke-linejoin:round}
-.marke .name{font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.06em}
+.marke .name{font:700 22px/1.05 var(--titel);text-transform:uppercase;letter-spacing:.04em}
 .marke .unter{font-size:13px;color:var(--head-mute)}
 .badges span{font-family:var(--mono);font-size:13px;padding:6px 10px;background:var(--schild);border:1px solid var(--braun)}
 
@@ -50,7 +51,7 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 .kennzahlen .karte{border:0;border-right:1px solid var(--line)}
 .kennzahlen .karte:last-child{border-right:0}
 .zahl{padding:16px}
-.zahl .wert{font-family:var(--mono);font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--akzent)}
+.zahl .wert{font-family:var(--mono);font-size:32px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--akzent)}
 .zahl .text{margin-top:2px;font-size:15px}
 .beleg{font-size:13px;color:var(--mute)}
 .zahl .beleg{margin-top:8px}
@@ -71,7 +72,6 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 .quellen li{margin:6px 0;overflow-wrap:anywhere}
 .quellen li:target{background:var(--hinweis-bg)}
 .hinweis{font-size:14px;color:var(--mute)}
-.fuss{color:var(--mute);font-size:13px;padding-bottom:32px}
 
 .ereignis{padding:14px 0;border-top:1px solid var(--line)}
 .ereignis:first-of-type{border-top:0;padding-top:4px}
@@ -83,10 +83,10 @@ main{max-width:var(--max);margin:0 auto;padding:28px 16px 8px;display:flex;flex-
 /* Seitennavigation (alle Seiten) */
 nav.seiten{background:var(--paper);border-bottom:1px solid var(--line)}
 nav.seiten ul{max-width:var(--max);margin:0 auto;padding:0 16px;list-style:none;display:flex;flex-wrap:wrap;gap:0}
-nav.seiten a{display:block;padding:10px 14px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
+nav.seiten a{display:block;padding:12px 14px 9px;font:600 15px/1.2 var(--titel);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
 nav.seiten a:hover{border-bottom-color:var(--hellbraun)}
 nav.seiten a[aria-current="page"]{border-bottom-color:var(--akzent);color:var(--akzent)}
-@media (max-width:520px){nav.seiten a{padding:9px 10px;font-size:13px;letter-spacing:.03em}}
+@media (max-width:520px){nav.seiten a{padding:11px 9px 8px;font-size:14px;letter-spacing:.04em}}
 
 /* Karten */
 :root{
