@@ -224,3 +224,38 @@ a[aria-expanded="true"]{background:var(--hinweis-bg)}
 .legende-knopf:hover{border-color:var(--line)}
 .legende-knopf[aria-pressed="true"]{border-color:var(--akzent);background:var(--bg)}
 @media (prefers-reduced-motion: reduce){.zl-punkt,.kartesvg .prov{transition:none}}
+
+/* ---------- Grafiken „Zahlen im Verhältnis“ ----------
+   Gedämpfte Tarnfarben; jede Farbe trägt zusätzlich eine Beschriftung mit Wert (Legende), nie Farbe allein. */
+.grafik{margin:0;padding:18px 0;border-top:1px solid var(--line)}
+.grafik:first-of-type{margin-top:8px}
+.g-titel{font-weight:700;font-size:16px;color:var(--ink);margin:0 0 10px;max-width:60ch}
+.balken{display:flex;gap:2px;height:28px;background:var(--paper)}
+.balken .seg{min-width:3px;border-radius:0}
+.balken .seg:first-child{border-radius:4px 0 0 4px}
+.balken .seg:last-child{border-radius:0 4px 4px 0}
+.balken.rahmen{gap:0;outline:1px solid var(--braun);outline-offset:-1px;border-radius:4px}
+.f1{background:var(--akzent)}
+.f2{background:var(--braun)}
+.f3{background:var(--hellbraun)}
+.leer{background:repeating-linear-gradient(135deg,transparent 0 5px,var(--line) 5px 7px)}
+.g-legende{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px}
+.g-legende li{display:block}
+.g-legende i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.g-legende i.leer{outline:1px solid var(--braun);outline-offset:-1px}
+.g-legende b{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.g-hinweis{font-size:13px;color:var(--mute);margin:8px 0 0 !important}
+.grafik .beleg{margin-top:6px}
+.spanne{position:relative;height:44px;margin-top:4px;border-bottom:1px solid var(--mute)}
+.sp-band{position:absolute;bottom:8px;height:14px;background:var(--braun);border-radius:4px}
+.sp-wert{position:absolute;top:0;transform:translateX(-50%);font:700 13px var(--mono)}
+.g-achse{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--mute);margin-top:3px}
+
+/* ---------- Teilen ---------- */
+.teilen-leiste{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.teilen-leiste button,.teilen-leiste a{font:600 13px var(--body);display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--braun);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer}
+.teilen-leiste button.haupt{background:var(--akzent);border-color:var(--akzent);color:var(--akzent-ink)}
+.teilen-leiste svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.teilen-meldung{font-size:13px;color:var(--mute);align-self:center}
+:target{scroll-margin-top:12px}
+.zahl:target,.grafik:target,.ereignis:target{outline:2px solid var(--akzent);outline-offset:4px}

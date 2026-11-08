@@ -308,7 +308,50 @@
     });
   }
 
+  /* ---------- Teilen ----------
+     Jedes Element mit data-teilen bekommt einen Teilen-Knopf. Geteilt wird die Seite
+     teilen/<id>.html: Sie trägt das Vorschaubild genau dieses Elements und leitet
+     Besucher zur Stelle auf der Hauptseite weiter. Erzeugt mit werkzeuge/teilen.js. */
+  var ICON_TEILEN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v7h14v-7"/></svg>';
+  var ICON_BILD = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>';
+  function teilen() {
+    var knoten = document.querySelectorAll('[data-teilen][id]');
+    if (!knoten.length) return;
+    Array.prototype.forEach.call(knoten, function (k) {
+      var id = k.id;
+      var url = new URL('teilen/' + id + '.html', location.href).href;
+      var titel = k.getAttribute('data-titel') || document.title;
+      var leiste = el('div', { class: 'teilen-leiste' });
+      var b = el('button', { type: 'button', class: 'haupt' });
+      b.innerHTML = ICON_TEILEN;
+      b.appendChild(document.createTextNode('Teilen'));
+      b.setAttribute('aria-label', 'Teilen: ' + titel);
+      var bild = el('a', { href: 'teilen/bilder/' + id + '-hoch.jpg', download: id + '.jpg' });
+      bild.innerHTML = ICON_BILD;
+      bild.appendChild(document.createTextNode('Bild'));
+      bild.setAttribute('aria-label', 'Bild herunterladen: ' + titel);
+      var meldung = el('span', { class: 'teilen-meldung', role: 'status' });
+      b.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({ title: titel, url: url }).catch(function () {});
+          return;
+        }
+        var fertig = function () { meldung.textContent = 'Link kopiert'; setTimeout(function () { meldung.textContent = ''; }, 2500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(fertig, function () { window.prompt('Link kopieren:', url); });
+        } else {
+          window.prompt('Link kopieren:', url);
+        }
+      });
+      leiste.appendChild(b);
+      leiste.appendChild(bild);
+      leiste.appendChild(meldung);
+      k.appendChild(leiste);
+    });
+  }
+
   document.querySelectorAll('ol.zeitleiste').forEach(zeitleiste);
   quellenEinblendung();
   karten();
+  teilen();
 })();

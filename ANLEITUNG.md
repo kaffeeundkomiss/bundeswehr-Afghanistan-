@@ -34,3 +34,20 @@ Ziel: öffentliche Seite auf GitHub Pages, Repository im Claude-Projekt „Gesch
 Die Bezeichnungen in Schritt 2 können je nach App-Version leicht abweichen.
 
 **Fertig wenn:** Das Repo steht in den Projekteinstellungen von „Geschichte“ unter den Ressourcen.
+
+## Teilen-Seiten und Vorschaubilder neu erzeugen
+
+Jede Grafik, Kennzahl und jedes Ereignis mit dem Merkmal `data-teilen` in `index.html` hat einen Teilen-Knopf. Geteilt wird die kleine Seite `teilen/<id>.html`. Sie enthält das Vorschaubild genau dieses Teils (`teilen/bilder/<id>.jpg`, 1200 × 630) und leitet Besucher zur Stelle auf der Hauptseite weiter. Der Knopf „Bild“ lädt die Hochformat-Fassung (`<id>-hoch.jpg`, 1080 × 1350) für eigene Posts. Grafiken und Kennzahlen erscheinen als Bild der Grafik, Ereignisse als gestaltete Überschrift.
+
+Die Bilder ändern sich nicht von selbst. Nach jeder Änderung an Zahlen, Grafiken, Ereignissen oder am Stand-Datum neu erzeugen:
+
+1. Node.js installieren (nodejs.org, LTS-Version), falls noch nicht vorhanden.
+2. Im Repo-Ordner im Terminal: `npm install --no-save playwright` und danach `npx playwright install chromium`
+3. `node werkzeuge/teilen.js`
+4. Geänderte Dateien in `teilen/` committen.
+
+**Fertig wenn:** Das Skript meldet für jedes Teil „fertig: <id>“, und `teilen/bilder/` enthält die neuen Bilder.
+
+Neues teilbares Element: `id`, `data-teilen`, `data-titel` (Titel der Linkvorschau) und `data-text` (Beschreibung) ergänzen, dann Schritt 3. Optional `data-bildtext`, wenn der Text ohne die Seite nicht verständlich ist (Beispiel: „davon fielen …“).
+
+**Linkvorschau testen** (nach dem Merge, wenn die Seite live ist): Link `…/teilen/<id>.html` im Facebook Sharing Debugger (developers.facebook.com/tools/debug) und im LinkedIn Post Inspector (linkedin.com/post-inspector) prüfen. Beide Werkzeuge erfordern eine Anmeldung. Plattformen speichern Vorschauen zwischen; nach einer Bildänderung dort „Erneut abrufen“ wählen.
