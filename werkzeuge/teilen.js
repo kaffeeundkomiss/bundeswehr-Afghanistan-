@@ -10,6 +10,7 @@
 // Nach jeder Änderung an Zahlen, Grafiken oder Ereignissen neu ausführen.
 'use strict';
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 const { chromium } = require('playwright');
 
@@ -123,9 +124,15 @@ function rendern({ id, art, zoom, adresse, mitte }) {
   document.body.appendChild(box);
 }
 
+function version(id) {
+  return crypto.createHash('sha1').update(fs.readFileSync(path.join(BILDER, id + '.jpg'))).digest('hex').slice(0, 8);
+}
+
 function teilseite(e) {
   const adresse = BASIS + 'teilen/' + e.id + '.html';
-  const bild = BASIS + 'teilen/bilder/' + e.id + '.jpg';
+  // Versionskennung aus dem Bildinhalt: Plattformen speichern Vorschaubilder je Adresse zwischen;
+  // ändert sich das Bild, ändert sich die Adresse, und das neue Bild wird geladen.
+  const bild = BASIS + 'teilen/bilder/' + e.id + '.jpg?v=' + version(e.id);
   const ziel = '../index.html#' + e.id;
   return `<!doctype html>
 <html lang="de">
@@ -184,4 +191,10 @@ function teilseite(e) {
     console.log('fertig:', e.id);
   }
   await browser.close();
+  // Vorschaubild der Startseite mit Versionskennung in index.html eintragen
+  const indexPfad = path.join(WURZEL, 'index.html');
+  const html = fs.readFileSync(indexPfad, 'utf8').replace(
+    /(<meta property="og:image" content=")[^"]*(">)/,
+    '$1' + BASIS + 'teilen/bilder/start.jpg?v=' + version('start') + '$2');
+  fs.writeFileSync(indexPfad, html);
 })();
