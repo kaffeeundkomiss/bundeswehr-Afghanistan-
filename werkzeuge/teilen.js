@@ -14,7 +14,7 @@ const crypto = require('crypto');
 const path = require('path');
 const { chromium } = require('playwright');
 
-const BASIS = 'https://kaffeeundkomiss.github.io/bundeswehr-Afghanistan-/';
+const BASIS = 'https://kaffeeundkommiss.github.io/bundeswehr-Afghanistan-/';
 const WURZEL = path.resolve(__dirname, '..');
 const ZIEL = path.join(WURZEL, 'teilen');
 const BILDER = path.join(ZIEL, 'bilder');
