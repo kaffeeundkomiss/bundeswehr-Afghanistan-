@@ -1,0 +1,6 @@
+{ "basis": "https://kaffeeundkommiss.github.io/bundeswehr-Afghanistan-/", "ordner": "teilen/bilder", "site_name": "Bundeswehr in Afghanistan",
+  "seiten": [
+    { "datei": "karte.html", "bild": "karte", "kicker": "Karte", "titel": "Afghanistan im Überblick", "unter": "Nachbarstaaten und die Standorte der Bundeswehr 2002–2021.", "karte": "svg.kartesvg" },
+    { "datei": "regionalkommandos.html", "bild": "regionalkommandos", "kicker": "Karte · Stand Dezember 2010", "titel": "Die Regionalkommandos der ISAF", "unter": "Sechs Regionalkommandos mit Hauptquartieren, Führungsnationen und Provinzen.", "karte": "svg.kartesvg" },
+    { "datei": "rc-nord.html", "bild": "rc-nord", "kicker": "Karte · Regionalkommando Nord", "titel": "Der deutsche Verantwortungsbereich", "unter": "Neun Provinzen, Wiederaufbauteams und beteiligte Nationen.", "karte": "svg.kartesvg" }
+  ] }
