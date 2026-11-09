@@ -267,7 +267,7 @@
       var info = el('p', { class: 'karten-info', 'aria-live': 'polite' }, 'Provinz antippen oder mit der Maus darauf zeigen.');
       var box = fig.querySelector('.kartenbox') || svg;
       box.parentNode.insertBefore(info, box.nextSibling);
-      var provinzen = svg.querySelectorAll('.prov');
+      var provinzen = svg.querySelectorAll('.prov, .flg');
       var gewaehlt = null;
       Array.prototype.forEach.call(provinzen, function (p) {
         var t = p.querySelector('title');
@@ -301,6 +301,9 @@
             svg.classList.toggle('hebt', an);
             Array.prototype.forEach.call(provinzen, function (p) {
               p.classList.toggle('hervor', an && p.classList.contains('rc-' + rc));
+            });
+            Array.prototype.forEach.call(svg.querySelectorAll('.flaggen'), function (g) {
+              g.classList.toggle('hervor', an && g.getAttribute('data-rc') === rc);
             });
             info.textContent = an ? b.textContent.trim() + ' hervorgehoben' : 'Provinz antippen oder mit der Maus darauf zeigen.';
           });
@@ -354,7 +357,7 @@
 
   /* ---------- Abschnitte ein- und ausklappen ----------
      Jeder Abschnitt mit eigener Überschrift (section[aria-labelledby] > h2) bekommt einen
-     Knopf in der Überschrift (Disclosure-Muster). Standard: alles offen. Ohne JavaScript
+     Knopf in der Überschrift (Disclosure-Muster). Standard: eingeklappt, außer Abschnitten mit data-offen. Ohne JavaScript
      und beim Drucken bleibt alles sichtbar. Sprungmarken in eingeklappte Abschnitte
      (Quellen, Ereignisse, geteilte Links) klappen den Abschnitt vorher auf. */
   var ICON_KLAPP = '<svg class="klapp-pfeil" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>';
@@ -408,6 +411,8 @@
       klappAbschnitte.push(ab);
     });
     if (!klappAbschnitte.length) return;
+    // Abschnitte mit data-offen (z. B. Kennzahlen) bleiben zu Beginn offen
+    klappAbschnitte.forEach(function (ab) { setzeOffen(ab, ab.section.hasAttribute('data-offen')); });
 
     // Ein Knopf für alle Abschnitte
     var leiste = el('div', { class: 'klapp-alle' });
@@ -415,9 +420,9 @@
     leiste.appendChild(alle);
     klappAbschnitte[0].section.parentNode.insertBefore(leiste, klappAbschnitte[0].section);
     function alleAktualisieren() {
-      var einerOffen = klappAbschnitte.some(function (ab) { return ab.knopf.getAttribute('aria-expanded') === 'true'; });
-      alle.textContent = einerOffen ? 'Alle Abschnitte einklappen' : 'Alle Abschnitte ausklappen';
-      alle.setAttribute('data-offen', String(einerOffen));
+      var alleOffen = klappAbschnitte.every(function (ab) { return ab.knopf.getAttribute('aria-expanded') === 'true'; });
+      alle.textContent = alleOffen ? 'Alle Abschnitte einklappen' : 'Alle Abschnitte ausklappen';
+      alle.setAttribute('data-offen', String(alleOffen));
     }
     alle.addEventListener('click', function () {
       var oeffnen = alle.getAttribute('data-offen') !== 'true';
