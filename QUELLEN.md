@@ -135,6 +135,31 @@ Abgerufen am 07.11.2026. Nummern [K1]–[K16] wie auf den Kartenseiten. Gruppen 
 | Deutschland führt RC North ab 01.06.2006 | [K4]; [K7]; [K16] | [K4] „Am 1. Juni 2006 übernahm Deutschland als sogenannte Lead Nation die Führung“; [K7] „2006 … unter deutscher Führung“; [K16] „2006“ | belegt (Tag nur [K4]) |
 | RC Southwest 2010 | [K13]; [K8] | [K13] Ankündigung 18.06.2010; [K8] führt „Regional Command South West“ im Dezember 2010 | belegt; genaues Datum offen |
 
+## Seite 2: Nationen je Regionalkommando (Flaggen, Stand 12/2010 bis 03/2011)
+
+Regel: Flagge auf der Karte nur bei zwei Quellen. Nur [K12] = Tabellenspalte „nur eine Quelle“, als nicht ausreichend belegt markiert.
+
+| Behauptung | Quellen | Passage | Bewertung |
+|---|---|---|---|
+| Führung RC Capital Türkei | [K8]; [K12] | [K8] „HQ RC(C) KABUL (TUR)“, „BG Rafet Sevinc SASMAZ (TUR)“; [K12] „The lead nation for RC-C was Turkey.“ | belegt |
+| RC Capital: Griechenland | [K8]; [K12] | [K8] „Kabul International Airport (KAIA) (GRE)“; [K12] „U/I Engineer Battalion \| Greece“ | belegt |
+| RC Capital: AUS, BEL, LUX, DEU, FRA, GBR, ITA, NZL, NOR, SVK, CZE, HUN, USA | [K12] | z. B. „FSB KAIA \| Hungary“, „U/I Force Protection Company \| Belgium/Luxemburg“, „U/I Reconnaissance Unit \| Germany“ | eine Quelle |
+| Führung RC North Deutschland | [K8]; [K12] | [K8] „HQ RC(N) in MAZAR-E SHARIF (DEU)“; [K12] „The lead nation for RC-N was Germany.“ | belegt |
+| RC North: SWE, HUN, NOR, TUR | [K8]; [K12] | [K8] „MAZAR-E SHARIF (SWE)“, „POL-E KHOMRI (HUN)“, „MEYMANEH (NOR)“, „JOWZJAN (TUR)“; [K12] „Provincial Reconstruction Team \| Sweden“ (ebenso Zeilen mit Hungary, Norway, Turkey) | belegt |
+| RC North: USA | [K7]; [K12] | [K7] Karte „US-KRÄFTE im RC NORD“; [K12] „Task Force Bayonet \| USA“ | belegt ([K8] nennt keine US-Einheit im Norden) |
+| Führung RC West Italien | [K8]; [K12] | [K8] „HQ RC(W) in HERAT (ITA)“; [K12] „The lead nation for RC-W was Italy.“ | belegt |
+| RC West: ESP, USA, LTU | [K8]; [K12] | [K8] „HERAT (ESP)“ (Stützpunkt), „QALA-E NOW (ESP)“, „FARAH (USA)“, „CHAGHCHARAN (LTU)“; [K12] „FSB Herat \| Spain“, „Provincial Reconstruction Team \| USA“ (Farah), „… \| Lithuania“ | belegt |
+| Führung RC South uneinheitlich (USA/GBR) | [K8]; [K12] | [K8] „HQ RC(S) in KANDAHAR (GBR)“, „MG James L. TERRY (USA)“; [K12] „The lead nation for RC-E, RC-S, and RC-SW was the United States.“, „HQ RC(S) \| UK (Rotates Canada, UK, US)“ | widersprüchlich, auf der Seite erläutert |
+| RC South: CAN, AUS | [K8]; [K12] | [K8] „KANDAHAR (CAN)“, „TARIN KOWT (US/AUS)“; [K12] „Provincial Reconstruction Team \| Canada“, „Rotary Wing Group \| Australia“ | belegt |
+| RC South: NZL, ROU, SGP, SVK | [K12] | „U/I Element \| New Zealand“, „811th Infantry Battalion … \| Romania“, „U/I Element \| Singapore“, „U/I Security Force \| Slovakia“ | eine Quelle |
+| Führung RC Southwest uneinheitlich (USA/GBR) | [K8]; [K12] | [K8] „HQ RC(SW) in LASHKAR GAH (GBR)“, „MG Richard MILLS (USA)“; [K12] „HQ RC(SW) \| US“ | widersprüchlich; GBR auch [K8] „LASHKAR GAH (GBR)“ (PRT), [K12] „Task Force Helmand … \| UK“ |
+| RC Southwest: DNK, EST, GEO | [K12] | „Danish Battle Group … \| Denmark“, „U/I Infantry Company \| Estonia“, „32nd Light Infantry Battalion \| Georgia“ | eine Quelle |
+| Führung RC East USA | [K8]; [K12] | [K8] „MG John CAMPBELL (USA)“, „BAGRAM (USA)“ (HQ ohne Nationenkürzel); [K12] „HQ RC(E) \| USA“ | belegt |
+| RC East: CZE, NZL, KOR, TUR | [K8]; [K12] | [K8] „LOGAR (CZE)“, „BAMYAN (NZL)“, „PARWAN (KOR)“, „WARDAK (TUR)“; [K12] „Provincial Reconstruction Team (Logar) \| Czech Republic“, „… (Bamyan) \| New Zealand“, „Task Force Taegeuk \| Republic of Korea“, „… (Wardak) \| Turkey“ | belegt |
+| RC East: FRA, POL | [K12] | „… Task Force La Fayette \| France“, „Task Force White Eagle … \| Poland“ | eine Quelle |
+
+Abgerufen 09.11.2026. Das Placemat [K8] nennt je RC nur HQ, Stützpunkt, Kommandeur und PRT, keine Kampfverbände; die Liste ist daher unvollständig. Flaggen: flag-icons 7.2.3, MIT-Lizenz (flaggen/LIZENZ-flag-icons.txt).
+
 ## Seite 3: RC North
 
 | Behauptung | Quellen | Passage | Bewertung |

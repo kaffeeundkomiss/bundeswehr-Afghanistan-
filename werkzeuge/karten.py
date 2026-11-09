@@ -111,6 +111,82 @@ def karte_uebersicht():
                'Afghanistan mit seinen 34 Provinzen und den sechs Nachbarstaaten. Hervorgehoben sind Kabul, Masar-i-Scharif, Kundus, Faisabad und Termes in Usbekistan.',
                cls='uebersicht')
 
+
+# ---------- Nationen je Regionalkommando (Flaggen) ----------
+# Stand Dezember 2010 / März 2011. Belege siehe QUELLEN.md, Abschnitt „Nationen je Regionalkommando“.
+# Flaggen: flaggen/*.svg aus dem Paket flag-icons 7.2.3 (MIT-Lizenz), einheitlich 4:3.
+NATION = {
+ 'de': 'Deutschland', 'tr': 'Türkei', 'it': 'Italien', 'us': 'USA', 'gb': 'Vereinigtes Königreich',
+ 'se': 'Schweden', 'hu': 'Ungarn', 'no': 'Norwegen', 'es': 'Spanien', 'lt': 'Litauen', 'ca': 'Kanada',
+ 'au': 'Australien', 'cz': 'Tschechien', 'nz': 'Neuseeland', 'kr': 'Südkorea', 'gr': 'Griechenland',
+ 'pl': 'Polen', 'fr': 'Frankreich', 'sk': 'Slowakei', 'sg': 'Singapur', 'ro': 'Rumänien', 'ee': 'Estland',
+ 'dk': 'Dänemark', 'ge': 'Georgien', 'be': 'Belgien', 'lu': 'Luxemburg'}
+# fuehrung: führende Nation(en); bei zwei Einträgen ist die Führung in den Quellen uneinheitlich.
+# weitere: in beiden Quellen genannt ([K8] und [K12]; USA im Norden [K7] und [K12]).
+# einzeln: nur in [K12] (März 2011) genannt.
+NATIONEN = {
+ 'C':  {'fuehrung': ['tr'], 'weitere': ['gr'],
+        'einzeln': ['au', 'be', 'lu', 'de', 'fr', 'gb', 'it', 'nz', 'no', 'sk', 'cz', 'hu', 'us']},
+ 'N':  {'fuehrung': ['de'], 'weitere': ['se', 'hu', 'no', 'tr', 'us'], 'einzeln': []},
+ 'W':  {'fuehrung': ['it'], 'weitere': ['es', 'us', 'lt'], 'einzeln': []},
+ 'S':  {'fuehrung': ['us', 'gb'], 'weitere': ['ca', 'au'], 'einzeln': ['nz', 'ro', 'sg', 'sk']},
+ 'SW': {'fuehrung': ['us', 'gb'], 'weitere': [], 'einzeln': ['dk', 'ee', 'ge']},
+ 'E':  {'fuehrung': ['us'], 'weitere': ['cz', 'nz', 'kr', 'tr'], 'einzeln': ['fr', 'pl']},
+}
+# Lage der Flaggengruppen (linke obere Ecke, Kartenkoordinaten; Startwerte, von Hand gesetzt)
+FLAGGEN_POS = {'N': (98.6, 48.0, 'mitte'), 'W': (43.3, 93.0, 'mitte'), 'S': (88.1, 133.5, 'mitte'),
+               'SW': (40.3, 141.8, 'mitte'), 'E': (138.9, 98.8, 'mitte'), 'C': (129.5, 77.0, 'rechts')}
+GW, GH = 9.6, 7.2      # führende Nation
+KW, KH = 5.2, 3.9      # weitere Nationen
+LUECKE, RAND = 0.8, 1.0
+
+def flagge(code, x, y, w, h, rc, rolle):
+    text = f'{NATION[code]}: {rolle}, {RCNAME[rc]}'
+    return (f'<g class="flg" data-rc="{rc.lower()}" data-info="{text}"><title>{text}</title>'
+            f'<image href="flaggen/{code}.svg" x="{f(x)}" y="{f(y)}" width="{f(w)}" height="{f(h)}" preserveAspectRatio="none"/>'
+            f'<rect class="flg-rand" x="{f(x)}" y="{f(y)}" width="{f(w)}" height="{f(h)}"/></g>')
+
+def flaggen_gruppe(rc):
+    d = NATIONEN[rc]
+    x0, y0, aus = FLAGGEN_POS[rc]
+    fu, we = d['fuehrung'], d['weitere']
+    zeilen = 2 if len(we) > 2 else 1
+    spalten = -(-len(we) // zeilen) if we else 0
+    breite = len(fu) * GW + (len(fu) - 1) * LUECKE + (LUECKE * 1.5 + spalten * KW + (spalten - 1) * LUECKE if spalten else 0)
+    hoehe = max(GH, zeilen * KH + (zeilen - 1) * LUECKE)
+    if aus == 'mitte':
+        x0 -= breite / 2
+    elif aus == 'rechts':
+        x0 -= breite
+    out = [f'<g class="flaggen" data-rc="{rc.lower()}">',
+           f'<rect class="flg-feld{" uneinheitlich" if len(fu) > 1 else ""}" x="{f(x0-RAND)}" y="{f(y0-RAND)}" width="{f(breite+2*RAND)}" height="{f(hoehe+2*RAND)}" rx="1"/>']
+    rolle = 'führende Nation' if len(fu) == 1 else 'Führung uneinheitlich angegeben'
+    x = x0
+    for c in fu:
+        out.append(flagge(c, x, y0 + (hoehe - GH) / 2, GW, GH, rc, rolle)); x += GW + LUECKE
+    if we:
+        x += LUECKE * 0.5
+        ky0 = y0 + (hoehe - (zeilen * KH + (zeilen - 1) * LUECKE)) / 2
+        for i, c in enumerate(we):
+            sp, ze = i // zeilen, i % zeilen
+            out.append(flagge(c, x + sp * (KW + LUECKE), ky0 + ze * (KH + LUECKE), KW, KH, rc, 'weitere Nation'))
+    out.append('</g>')
+    return '\n'.join(out)
+
+def nationen_tabelle():
+    def fl(c, k=''):
+        return f'<span class="nat{k}"><img src="flaggen/{c}.svg" alt="" width="24" height="18">{NATION[c]}</span>'
+    reihen = []
+    for rc in ['C', 'N', 'W', 'S', 'SW', 'E']:
+        d = NATIONEN[rc]
+        fu = ' '.join(fl(c, ' gross') for c in d['fuehrung'])
+        if len(d['fuehrung']) > 1:
+            fu += ' <span class="marke-einzel">uneinheitlich</span>'
+        we = ' '.join(fl(c) for c in sorted(d['weitere'], key=NATION.get)) or '–'
+        ei = ' '.join(fl(c) for c in sorted(d['einzeln'], key=NATION.get)) or '–'
+        reihen.append(f'          <tr data-rc="{rc.lower()}"><th scope="row">{RCNAME[rc]}</th><td>{fu}</td><td>{we}</td><td class="einzeln">{ei}</td></tr>')
+    return '\n'.join(reihen)
+
 # ---------- Karte 2: Regionalkommandos ----------
 def karte_rc():
     lab = {'N': ('RC North', 66.9, 36.1), 'W': ('RC West', 63.2, 33.6),
@@ -129,9 +205,10 @@ def karte_rc():
         ort('masar', 'ort hq', 0, -3.5, 'middle'), ort('herat', 'ort hq', 0, -3.5, 'middle'),
         ort('kandahar', 'ort hq', 3, 4), ort('lashkargah', 'ort hq', -3, 4.5, 'end'),
         ort('bagram', 'ort hq', 3, -2), ort('kabul', 'ort hq rcc', -3.2, 1.4, 'end', 'RC Capital · Kabul'),
+        '\n'.join(flaggen_gruppe(r) for r in ['N', 'W', 'S', 'SW', 'E', 'C']),
     ])
     return svg(inhalt, 'Karte der ISAF-Regionalkommandos, Stand Dezember 2010',
-               'Afghanistan, eingeteilt in sechs ISAF-Regionalkommandos: Capital um Kabul, North, West, South, Southwest und East, jeweils mit Hauptquartier.',
+               'Afghanistan, eingeteilt in sechs ISAF-Regionalkommandos: Capital um Kabul, North, West, South, Southwest und East, jeweils mit Hauptquartier. Je Kommando zeigt eine große Flagge die führende Nation, kleine Flaggen weitere beteiligte Nationen.',
                cls='rc')
 
 # ---------- Karte 3: RC North ----------
@@ -187,4 +264,5 @@ if __name__ == '__main__':
     einsetzen('karte.html', 'uebersicht', karte_uebersicht())
     einsetzen('regionalkommandos.html', 'rc', karte_rc())
     einsetzen('rc-nord.html', 'nord', karte_nord())
+    einsetzen('regionalkommandos.html', 'nationen', nationen_tabelle())
     print('Karten eingesetzt.')
