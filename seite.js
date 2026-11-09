@@ -267,7 +267,7 @@
       var info = el('p', { class: 'karten-info', 'aria-live': 'polite' }, 'Provinz antippen oder mit der Maus darauf zeigen.');
       var box = fig.querySelector('.kartenbox') || svg;
       box.parentNode.insertBefore(info, box.nextSibling);
-      var provinzen = svg.querySelectorAll('.prov');
+      var provinzen = svg.querySelectorAll('.prov, .flg');
       var gewaehlt = null;
       Array.prototype.forEach.call(provinzen, function (p) {
         var t = p.querySelector('title');
@@ -301,6 +301,9 @@
             svg.classList.toggle('hebt', an);
             Array.prototype.forEach.call(provinzen, function (p) {
               p.classList.toggle('hervor', an && p.classList.contains('rc-' + rc));
+            });
+            Array.prototype.forEach.call(svg.querySelectorAll('.flaggen'), function (g) {
+              g.classList.toggle('hervor', an && g.getAttribute('data-rc') === rc);
             });
             info.textContent = an ? b.textContent.trim() + ' hervorgehoben' : 'Provinz antippen oder mit der Maus darauf zeigen.';
           });
