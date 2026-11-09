@@ -225,6 +225,7 @@
         var link = el('a', { href: '#' + id }, 'In der Quellenliste zeigen');
         link.addEventListener('click', function (ev) {
           ev.preventDefault(); schliessen();
+          aufklappenFuer(ziel);
           ziel.scrollIntoView({ behavior: bewegung() ? 'smooth' : 'auto', block: 'center' });
           history.replaceState(null, '', '#' + id);
           ziel.classList.add('blinkt'); setTimeout(function () { ziel.classList.remove('blinkt'); }, 1600);
@@ -350,8 +351,107 @@
     });
   }
 
+
+  /* ---------- Abschnitte ein- und ausklappen ----------
+     Jeder Abschnitt mit eigener Überschrift (section[aria-labelledby] > h2) bekommt einen
+     Knopf in der Überschrift (Disclosure-Muster). Standard: alles offen. Ohne JavaScript
+     und beim Drucken bleibt alles sichtbar. Sprungmarken in eingeklappte Abschnitte
+     (Quellen, Ereignisse, geteilte Links) klappen den Abschnitt vorher auf. */
+  var ICON_KLAPP = '<svg class="klapp-pfeil" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>';
+  var bisSuche = 'onbeforematch' in document.body;
+  var klappAbschnitte = [];
+
+  function setzeOffen(ab, offen) {
+    ab.knopf.setAttribute('aria-expanded', String(offen));
+    ab.section.classList.toggle('zu', !offen);
+    if (offen) {
+      ab.inhalt.removeAttribute('hidden');
+    } else if (bisSuche) {
+      ab.inhalt.setAttribute('hidden', 'until-found');
+    } else {
+      ab.inhalt.hidden = true;
+    }
+  }
+  function nachAufklappen() {
+    // Zeitleiste und Karten messen beim Größenwechsel neu
+    window.dispatchEvent(new Event('resize'));
+  }
+  function aufklappenFuer(ziel) {
+    var geaendert = false;
+    klappAbschnitte.forEach(function (ab) {
+      if (ab.inhalt.contains(ziel) && ab.inhalt.hidden !== false) { setzeOffen(ab, true); geaendert = true; }
+    });
+    if (geaendert) { nachAufklappen(); if (klappen.aktualisieren) klappen.aktualisieren(); }
+  }
+
+  function klappen() {
+    var sections = document.querySelectorAll('main section[aria-labelledby]');
+    Array.prototype.forEach.call(sections, function (section) {
+      var h2 = document.getElementById(section.getAttribute('aria-labelledby'));
+      if (!h2 || h2.tagName !== 'H2' || h2.parentNode !== section) return;
+      var inhalt = el('div', { class: 'klapp-inhalt', id: h2.id + '-inhalt' });
+      while (h2.nextSibling) inhalt.appendChild(h2.nextSibling);
+      section.appendChild(inhalt);
+      var knopf = el('button', { type: 'button', 'aria-expanded': 'true', 'aria-controls': inhalt.id });
+      while (h2.firstChild) knopf.appendChild(h2.firstChild);
+      knopf.insertAdjacentHTML('beforeend', ICON_KLAPP);
+      h2.appendChild(knopf);
+      h2.classList.add('klapp-kopf');
+      var ab = { section: section, knopf: knopf, inhalt: inhalt };
+      knopf.addEventListener('click', function () {
+        var offen = knopf.getAttribute('aria-expanded') !== 'true';
+        setzeOffen(ab, offen);
+        if (offen) nachAufklappen();
+        alleAktualisieren();
+      });
+      inhalt.addEventListener('beforematch', function () { setzeOffen(ab, true); nachAufklappen(); alleAktualisieren(); });
+      klappAbschnitte.push(ab);
+    });
+    if (!klappAbschnitte.length) return;
+
+    // Ein Knopf für alle Abschnitte
+    var leiste = el('div', { class: 'klapp-alle' });
+    var alle = el('button', { type: 'button' });
+    leiste.appendChild(alle);
+    klappAbschnitte[0].section.parentNode.insertBefore(leiste, klappAbschnitte[0].section);
+    function alleAktualisieren() {
+      var einerOffen = klappAbschnitte.some(function (ab) { return ab.knopf.getAttribute('aria-expanded') === 'true'; });
+      alle.textContent = einerOffen ? 'Alle Abschnitte einklappen' : 'Alle Abschnitte ausklappen';
+      alle.setAttribute('data-offen', String(einerOffen));
+    }
+    alle.addEventListener('click', function () {
+      var oeffnen = alle.getAttribute('data-offen') !== 'true';
+      klappAbschnitte.forEach(function (ab) { setzeOffen(ab, oeffnen); });
+      if (oeffnen) nachAufklappen();
+      alleAktualisieren();
+    });
+    alleAktualisieren();
+    klappen.aktualisieren = alleAktualisieren;
+
+    // Sprungmarken: vor dem Springen aufklappen
+    function zuHash() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var ziel = id && document.getElementById(id);
+      if (!ziel) return;
+      var war = ziel.closest('.klapp-inhalt');
+      if (war && war.hidden !== false) {
+        aufklappenFuer(ziel);
+        ziel.scrollIntoView({ block: 'start' });
+      }
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a || e.defaultPrevented) return;
+      var ziel = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+      if (ziel) aufklappenFuer(ziel);
+    });
+    window.addEventListener('hashchange', zuHash);
+    zuHash();
+  }
+
   document.querySelectorAll('ol.zeitleiste').forEach(zeitleiste);
   quellenEinblendung();
   karten();
   teilen();
+  klappen();
 })();

@@ -265,3 +265,22 @@ a[aria-expanded="true"]{background:var(--hinweis-bg)}
 .ereignis::after{content:"";display:block;clear:both}
 @media (max-width:620px){.evbild{float:none;width:100%;margin:6px 0 10px}}
 .bildnachweis{list-style:none;padding-left:0 !important}
+
+/* Abschnitte ein- und ausklappen (seite.js, klappen) */
+h2.klapp-kopf{padding:0}
+h2.klapp-kopf > button{position:relative;display:inline-flex;align-items:center;gap:10px;margin:0;padding:5px 10px 4px 12px;
+  background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-align:left;cursor:pointer}
+h2.klapp-kopf > button::after{content:"";position:absolute;inset:-8px -6px}
+h2.klapp-kopf > button:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+.klapp-pfeil{flex:none;width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;transition:transform .15s}
+.zu .klapp-pfeil{transform:rotate(-90deg)}
+.zu > h2.klapp-kopf{margin-bottom:0}
+.karte.block.zu{padding-bottom:0;background:transparent;border-left-color:transparent;border-right-color:transparent;border-bottom-color:transparent}
+.klapp-alle{display:flex;justify-content:flex-end;margin:0 0 -12px}
+.klapp-alle button{background:none;border:0;padding:6px 0;font:500 13px/1.2 var(--mono);color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.klapp-alle button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ .klapp-pfeil{transition:none} }
+@media print{
+  .klapp-inhalt[hidden]{display:block!important}
+  .klapp-pfeil,.klapp-alle{display:none}
+}
