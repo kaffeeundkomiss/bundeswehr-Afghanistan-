@@ -1,4 +1,4 @@
-# Setzt die Kartenquellen [K1]…[K16] zwischen <!-- quellen --> und <!-- /quellen --> der Kartenseiten.
+# Setzt die Kartenquellen [K1]…[K18] zwischen <!-- quellen --> und <!-- /quellen --> der Kartenseiten.
 # Aufruf im Repo-Ordner: python3 werkzeuge/quellen.py karte.html regionalkommandos.html rc-nord.html
 Q = {
 'k1': 'Natural Earth: <a href="https://www.naturalearthdata.com/">Free vector and raster map data</a>, Maßstab 1:10 Mio., Länder, Provinzen und Orte. Gemeinfrei (<a href="https://github.com/nvkelso/natural-earth-vector/blob/master/LICENSE.md">Nutzungsbedingungen</a>). Kartengrundlage aller Karten, abgerufen 07.11.2026.',
@@ -17,6 +17,8 @@ Q = {
 'k14': 'Wikipedia: <a href="https://en.wikipedia.org/wiki/War_in_Afghanistan_order_of_battle,_2012">War in Afghanistan order of battle, 2012</a>. Stand der Darstellung November 2012, abgerufen 07.11.2026 (englisch). Die Seite bezeichnet ihre Listen selbst als „rough and unofficial“; hier nur ergänzend genutzt.',
 'k15': 'Bundeszentrale für politische Bildung: <a href="https://www.bpb.de/themen/militaer/deutsche-verteidigungspolitik/238332/der-bundeswehreinsatz-in-afghanistan/">Der Bundeswehreinsatz in Afghanistan</a>. 15.12.2016 (auf der Startseite Quelle [2]).',
 'k16': 'Markus Würz: <a href="https://www.hdg.de/lemo/kapitel/globalisierung/internationale-herausforderungen/afghanistan-einsatz.html">Afghanistan-Einsatz</a>. LeMO, Stiftung Haus der Geschichte, Stand 22.06.2023 (auf der Startseite Quelle [3]).',
+'k17': 'Flags of the World (CRW Flags): <a href="https://www.crwflags.com/fotw/flags/af.html">Afghanistan</a>. Seite zuletzt geändert 02.08.2025, abgerufen 09.11.2026 (englisch). Fundstelle: „Flag adopted 4 January 2004. Date on flag: 1298 = 1919 C.E.“',
+'k18': 'Whitney Smith, Redaktion Encyclopaedia Britannica: <a href="https://www.britannica.com/topic/flag-of-Afghanistan">Flag of Afghanistan</a>. Ohne Datum, abgerufen 09.11.2026 (englisch). Nennt die Einführung am 29.01.2002 und die Zusätze nach der Verfassung von 2004; der Text ist in Teilen nicht aktualisiert.',
 }
 # Hinweis zur Unabhängigkeit (steht auf jeder Kartenseite):
 GRUPPEN = '[k4], [k5], [k6] (Bundeswehr) und [k7] (Bundesregierung, mit dem Verteidigungsministerium erstellt) gelten untereinander nicht als unabhängig. Ebenso [k8], [k9], [k10] und [k11], die alle von NATO bzw. ISAF stammen.'
