@@ -172,3 +172,37 @@ Abgerufen 09.11.2026. Das Placemat [K8] nennt je RC nur HQ, Stützpunkt, Kommand
 | US-Kräfte im Norden | [K7]; [K14] | [K7] Karte „US-KRÄFTE im RC NORD“; [K14] 3-7 Cavalry, FOB Kunduz | belegt |
 
 Offen: ZMSBw-Publikation „ISAF Regionalkommando Nord“ (opus4.kobv.de) war wegen Bot-Sperre nicht lesbar und ist nicht verwendet. Nationenliste für andere Jahre als 2012 fehlt. Fortschrittsbericht [K7]: Angabe „rund 5.000“ US-Soldaten 2010 nur aus Zusammenfassung gesehen, nicht übernommen.
+
+## Rechtliche Grundlagen (Abschnitt „Rechtliche Grundlagen“, ergänzt 09.11.2026)
+
+Abgerufen am 09.11.2026. Gruppen: [31]–[34] Vereinte Nationen; [35]–[37] NATO; [41]–[43], [46] Bundesregierung (wie [27]); [44] Bundestag; [38] bpb; [40] Bundeswehr. Innerhalb der Gruppen nicht unabhängig. [35]–[37] wurden nur in maschinell gekürzter Fassung gelesen; die Aussagen sind durch die jeweils zweite Quelle gedeckt.
+
+| Behauptung | Quellen | Passage (wörtlich, gekürzt) | Bewertung |
+|---|---|---|---|
+| Res. 1368, 12.09.2001, einstimmig, Selbstverteidigungsrecht | [31]; [40] | [31] „Recognizing the inherent right of individual or collective self-defence in accordance with the Charter“, „unanimously adopt resolution 1368“; [40] Res. 1368 „unterstrich das Recht der USA zur individuellen und kollektiven Selbstverteidigung nach Art. 51 der VN-Charta“ | belegt |
+| OEF beruft sich auf Art. 51 UN-Charta | [41]; [38] | [41] „auf Grundlage des Artikels 51 der Satzung der Vereinten Nationen und des Artikels 5 des Nordatlantikvertrags sowie der Resolution 1368 (2001) und 1373 (2001)“; [38] „Die Mission beruhte auf dem in Artikel 51 der Charta der Vereinten Nationen garantierten Recht“ | belegt |
+| Res. 1386, 20.12.2001, Kap. VII, sechs Monate, Kabul und Umgebung | [32]; [42]; [38] | [32] „Acting for these reasons under Chapter VII“, „establishment for 6 months of an International Security Assistance Force … in Kabul and its surrounding areas“; [42] Res. 1386 „auf Grundlage des Kapitels VII“; [38] „Mit der Resolution 1386 vom 20. Dezember 2001 ebnete der UN-Sicherheitsrat erneut einstimmig den Weg“ | belegt |
+| Res. 1510, 13.10.2003, Ausweitung außerhalb Kabuls | [33]; [36] | [33] „genehmigt die Ausweitung des Mandats der Internationalen Sicherheitsbeistandstruppe“ … „in Gebieten Afghanistans außerhalb Kabuls und seiner Umgebung“; [36] UNSCR 1510 erweitert das Mandat (Oktober 2003) | belegt; [33] ist eine Vorabfassung der UN-Übersetzung |
+| RS: Einladung Afghanistans, Truppenstatut 30.09.2014, Res. 2189 vom 12.12.2014 begrüßt | [34]; [37]; [43] | [34] „auf Einladung der Islamischen Republik Afghanistan“, Abkommen und Einladung „eine solide Rechtsgrundlage für diese Mission bilden“; [37] „at the invitation of the Afghan government“, „in accordance with … Resolution 2189“; [43] „Zustimmung der Regierung der Islamischen Republik Afghanistan … Truppenstatutes vom 30. September 2014“ | belegt |
+| Art. 5: Angriff auf einen gilt als Angriff auf alle; Bezug Art. 51 | [35]; [38] | [35] „an armed attack against one or more of them … shall be considered an attack against them all“, „recognised by Article 51 of the Charter“; [38] Bündnisfall „nach Artikel 5 des Nordatlantikvertrags“ | belegt; Vertragstext selbst nicht wörtlich gelesen |
+| 12.09.2001: Bündnisfall unter Vorbehalt | [35]; [38]; [39] | [35] „it shall be regarded as an action covered by Article 5“ (wenn vom Ausland gesteuert); [38] „sobald zweifelsfrei feststehe, dass die Anschläge auf die USA vom Ausland ausgeführt worden seien“; [39] „wenn der Angriff auf die USA erwiesenermaßen von außen gekommen sei“ | belegt |
+| 02.10.2001: Robertson, USA legen Beweise vor | [35]; [38] | [38] „verkündete der damalige NATO-Generalsekretär Robertson, dass die USA schließlich Beweise“; [35] formelle Feststellung nach Unterrichtung | belegt |
+| Endgültiger Bündnisfall: 2.10. oder 4.10.2001 | [40]; [38]; [39] | [40] „Am 2. Oktober 2001 löste die NATO erstmals den Bündnisfall aus.“; [38] „am 4. Oktober 2001 einstimmig und erstmals in der Geschichte der NATO“; [39] „beschloss der NATO-Rat am 4. Oktober 2001, den Bündnisfall auszurufen“ | Widerspruch, auf der Seite offen genannt |
+| Erstes und einziges Mal Art. 5 | [35]; [38] | [38] „erstmals in der Geschichte der NATO“; [35] einziger Fall bisher; bpb 2024 (Ewers-Peters) „bisher nur einmal ausgelöst“ | belegt |
+| ISAF auf UN-Mandat, NATO-Führung ab August 2003 | [36]; [38]; [42] | [36] „On 11 August 2003, NATO assumed leadership“, Grundlage UN-Mandat nach Kapitel VII; [38] NATO-Kommando ab August 2003; [42] Grundlage Res. 1386 | belegt |
+| Parlamentsvorbehalt BVerfG 12.07.1994, ParlBG 2005 | [47]; [48]; [10] | [47] Leitsatz 3a „die grundsätzlich vorherige konstitutive Zustimmung des Deutschen Bundestages einzuholen“; [48] § 1 Abs. 2 „bedarf der Zustimmung des Bundestages“; [10] S. 37 f. | belegt |
+| Art. 24 Abs. 2 GG in den Anträgen | [41]; [42]; [43]; [47] | jeweils „im Rahmen und nach den Regeln eines Systems gegenseitiger kollektiver Sicherheit im Sinne des Artikels 24 Abs. 2“ | belegt (Anträge stammen alle von der Bundesregierung; [47] als unabhängige Stütze für die Norm) |
+| OEF-Antrag: bis zu 3.900 Soldaten, zwölf Monate | [41]; [39] | [41] „bis zu 3 900 Soldaten“, „zunächst auf zwölf Monate begrenzt“; [39] „zunächst 3.900 deutsche Soldaten“ | belegt (Dauer nur [41]) |
+| OEF-Beteiligung Juli 2010 eingestellt, Mandat Ende 2010 nicht verlängert | [40] | „Beteiligung zum Juli 2010 eingestellt, das Bundestagsmandat Ende 2010 nicht mehr verlängert“ | eine Quelle (Bundeswehr) |
+| ISAF-Antrag: bis zu 1.200, bis 20.06.2002 | [42]; [38] | [42] „bis zu 1 200 Soldaten“, „bis zum 20. Juni 2002 befristet“; [38] „zunächst begrenzt auf sechs Monate und 1.200 Soldatinnen und Soldaten“ | belegt |
+| RS: Abstimmung 18.12.2014, bis zu 850, bis 31.12.2015 | [43]; [44]; [45] | [44] „entscheidet der Bundestag am Donnerstag, 18. Dezember 2014“, „bis zu 850 Soldaten“; [45] „Der Bundestag stimmte am Donnerstag in namentlicher Abstimmung für eine Beteiligung“; [43] „endet nach zwölf Monaten am 31. Dezember 2015“ | belegt; Stimmenzahlen nicht gefunden |
+| Letzte Verlängerung März 2021 bis 31.01.2022, bis 1.300 | [46] | „bis zum 31. Januar 2022“, bis zu 1.300 Soldaten | eine Quelle; Abstimmungsdatum nicht geprüft |
+
+### Nutzung der Symbole (Stand 09.11.2026)
+
+| Symbol | Regel | Quelle | Folge |
+|---|---|---|---|
+| Bundesflagge ohne Adler | „Das Führen der Bundesflagge steht mithin grundsätzlich jedermann frei.“ | WD 7 – 3000 – 062/24, 29.08.2024 | verwendet |
+| Bundesadler, Bundesdienstflagge | „Wenn Sie eine Darstellung des Bundesadlers verwenden möchten, müssen Sie eine Genehmigung beantragen.“; § 124 OWiG | Bundesverwaltungsamt, Stand 19.01.2026; gesetze-im-internet.de | nicht verwendet |
+| UN-Emblem | „the UN emblem and seal could not be used without the authorization of the Secretary-General“; die UN-Flagge dürfe gezeigt werden, um Unterstützung für die UN auszudrücken | UN, The United Nations Flag (nflag.pdf), ohne Datum | eigene Zeichnung ohne Emblem |
+| NATO-Logo/Embleme | Dritte müssen vorher eine Genehmigung der NATO einholen (nur in gekürzter Fassung gelesen) | NATO, Use of NATO content and brand, ohne Datum | eigene Zeichnung ohne Emblem; nicht ausreichend belegt |
