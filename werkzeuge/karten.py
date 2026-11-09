@@ -106,11 +106,23 @@ def karte_uebersicht():
         ort('feyzabad', 'ort de', 3, -2),
         ort('termes', 'ort de', 3, -2, label='Termes (Usbekistan)'),
         ort('herat', 'ort', 3, -2), ort('kandahar', 'ort', 3, -2),
+        flagge_afg(),
     ])
     return svg(inhalt, 'Karte Afghanistans mit Nachbarstaaten und Standorten der Bundeswehr',
-               'Afghanistan mit seinen 34 Provinzen und den sechs Nachbarstaaten. Hervorgehoben sind Kabul, Masar-i-Scharif, Kundus, Faisabad und Termes in Usbekistan.',
+               'Afghanistan mit seinen 34 Provinzen und den sechs Nachbarstaaten. Hervorgehoben sind Kabul, Masar-i-Scharif, Kundus, Faisabad und Termes in Usbekistan. Im Südwesten steht die Flagge der Islamischen Republik Afghanistan, wie sie von 2004 bis August 2021 galt.',
                cls='uebersicht')
 
+
+# Flagge der Islamischen Republik Afghanistan (Fassung 2004 bis August 2021), flag-icons 7.2.3 (MIT).
+# Lage im Südwesten (Provinz Farah, dort keine Beschriftung); Startwerte, von Hand gesetzt.
+AFG_FLAGGE = (40.0, 100.0, 16.0, 12.0)
+def flagge_afg():
+    x, y, w, h = AFG_FLAGGE
+    t = 'Flagge der Islamischen Republik Afghanistan, in dieser Form 2004 bis August 2021'
+    return (f'<g class="flg afg-flagge" data-info="{t}"><title>{t}</title>'
+            f'<image href="flaggen/af.svg" x="{f(x)}" y="{f(y)}" width="{f(w)}" height="{f(h)}" preserveAspectRatio="none"/>'
+            f'<rect class="flg-rand" x="{f(x)}" y="{f(y)}" width="{f(w)}" height="{f(h)}"/>'
+            f'<text class="flg-text" x="{f(x + w / 2)}" y="{f(y + h + 4.2)}" text-anchor="middle">Flagge 2004–2021</text></g>')
 
 # ---------- Nationen je Regionalkommando (Flaggen) ----------
 # Stand Dezember 2010 / März 2011. Belege siehe QUELLEN.md, Abschnitt „Nationen je Regionalkommando“.
