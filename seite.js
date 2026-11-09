@@ -357,7 +357,7 @@
 
   /* ---------- Abschnitte ein- und ausklappen ----------
      Jeder Abschnitt mit eigener Überschrift (section[aria-labelledby] > h2) bekommt einen
-     Knopf in der Überschrift (Disclosure-Muster). Standard: alles offen. Ohne JavaScript
+     Knopf in der Überschrift (Disclosure-Muster). Standard: alles eingeklappt. Ohne JavaScript
      und beim Drucken bleibt alles sichtbar. Sprungmarken in eingeklappte Abschnitte
      (Quellen, Ereignisse, geteilte Links) klappen den Abschnitt vorher auf. */
   var ICON_KLAPP = '<svg class="klapp-pfeil" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>';
@@ -411,6 +411,7 @@
       klappAbschnitte.push(ab);
     });
     if (!klappAbschnitte.length) return;
+    klappAbschnitte.forEach(function (ab) { setzeOffen(ab, false); });
 
     // Ein Knopf für alle Abschnitte
     var leiste = el('div', { class: 'klapp-alle' });
