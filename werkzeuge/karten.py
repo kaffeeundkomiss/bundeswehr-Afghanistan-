@@ -76,8 +76,23 @@ def ort(key, cls='ort', dx=3, dy=-2, anker='start', label=None):
     return (f'<g class="{cls}"><circle cx="{f(x)}" cy="{f(y)}" r="1.9"/>'
             f'<text x="{f(x+dx)}" y="{f(y+dy)}" text-anchor="{anker}">{t}</text></g>')
 
+def massstab(x, y, km, einh_je_km, fs):
+    """Maßstabsleiste (zwei Felder) mit Beschriftung, linke untere Ecke bei (x, y), Kartenmaß in SVG-Einheiten."""
+    L = km * einh_je_km; h = fs * .42; sw = fs * .07
+    r = lambda v: f'{v:.1f}'.rstrip('0').rstrip('.')
+    return (f'<g class="massstab" aria-hidden="true">'
+            f'<rect class="a" x="{r(x)}" y="{r(y-h)}" width="{r(L/2)}" height="{r(h)}" stroke-width="{r(sw) if sw>=.05 else f"{sw:.2f}"}"/>'
+            f'<rect class="b" x="{r(x+L/2)}" y="{r(y-h)}" width="{r(L/2)}" height="{r(h)}" stroke-width="{r(sw) if sw>=.05 else f"{sw:.2f}"}"/>'
+            f'<text x="{r(x)}" y="{r(y-h-fs*.35)}" font-size="{r(fs)}" style="stroke-width:{fs*.25:.2f}px">0</text>'
+            f'<text x="{r(x+L)}" y="{r(y-h-fs*.35)}" font-size="{r(fs)}" style="stroke-width:{fs*.25:.2f}px">{km} km</text></g>')
+
+# Maßstab: 1 Grad Breite = 111,32 km = P['s'] Karteneinheiten (gilt bei der Bezugsbreite der Projektion)
+EINH_JE_KM = P['s'] / 111.32
+
 def svg(inhalt, titel, desc, vb=None, cls=''):
     vb = vb or f'-6 -4 {f(W+12)} {f(H+8)}'
+    vx, vy, vw, vh = map(float, vb.split())
+    inhalt += '\n' + massstab(vx + 5, vy + vh - 4, 200, EINH_JE_KM, vw * .0155)
     return (f'<svg class="kartesvg {cls}" viewBox="{vb}" role="img" aria-labelledby="t-{cls} d-{cls}">'
             f'<title id="t-{cls}">{titel}</title><desc id="d-{cls}">{desc}</desc>\n{inhalt}\n</svg>')
 
