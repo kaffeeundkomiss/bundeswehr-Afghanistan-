@@ -319,3 +319,8 @@ td.einzeln .nat img{opacity:.75;border-style:dashed}
 .legende-flagge{vertical-align:-3px;border:1px solid var(--line)}
 .mandat-symbol{float:left;width:40px;height:40px;margin:0 10px 4px 0}
 .mandate li>div::after{content:"";display:block;clear:both}
+/* Maßstabsleiste (Größen je Karte im SVG gesetzt) */
+.kartesvg .massstab rect{stroke:var(--k-text)}
+.kartesvg .massstab .a{fill:var(--k-text)}
+.kartesvg .massstab .b{fill:var(--k-halo)}
+.kartesvg .massstab text{text-anchor:middle;font-weight:600;fill:var(--k-text)}
